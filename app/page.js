@@ -13,6 +13,13 @@ import Marquee from "react-fast-marquee";
 export default function Home() {
   return (
     <div className="px-2 sm:px-4">
+      {/* about  */}
+      <section className="py-10">
+        <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
+          About
+        </h2>
+        <div className="pt-4"></div>
+      </section>
       {/* education  */}
       <section className="py-10">
         <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
@@ -56,7 +63,7 @@ export default function Home() {
           My Services
         </h2>
         <div className="py-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-          <div className="p-4 rounded-lg border glow:border-red-300 border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
+          <div className="p-4 rounded-lg border border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
             <div>
               <RiNextjsFill className="text-[65px] text-text-root " />
             </div>
@@ -68,6 +75,17 @@ export default function Home() {
                 I can build a website from scratch using the latest technologies
                 and frameworks.
               </p>
+            </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
             </div>
           </div>
 
@@ -84,6 +102,17 @@ export default function Home() {
                 and frameworks.
               </p>
             </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
+            </div>
           </div>
 
           <div className="p-4 rounded-lg border border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
@@ -99,6 +128,17 @@ export default function Home() {
                 and frameworks.
               </p>
             </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
+            </div>
           </div>
           <div className="p-4 rounded-lg border border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
             <div>
@@ -112,6 +152,17 @@ export default function Home() {
                 I can build a website from scratch using the latest technologies
                 and frameworks.
               </p>
+            </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
             </div>
           </div>
           <div className="p-4 rounded-lg border border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
@@ -127,6 +178,17 @@ export default function Home() {
                 and frameworks.
               </p>
             </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
+            </div>
           </div>
           <div className="p-4 rounded-lg border border-project-card-border bg-project-card-bg-secondary backdrop-blur-3xl ">
             <div>
@@ -140,6 +202,17 @@ export default function Home() {
                 I can build a website from scratch using the latest technologies
                 and frameworks.
               </p>
+            </div>
+            <div className="absolute top-0 -translate-y-1/3 mx-auto  right-0 w-3/4">
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "100%",
+                  aspectRatio: 1,
+                  opacity: "0.2",
+                }}
+                className="bg-[rgba(0,255,255,0.87)] rounded-full filter blur-3xl"
+              />
             </div>
           </div>
         </div>

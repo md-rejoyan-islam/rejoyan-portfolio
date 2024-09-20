@@ -65,7 +65,7 @@ export default function Navbar() {
       className={`text-text-secondary h-[70px] max-container mx-auto   px-4 `}
     >
       <div
-        className="flex items-center justify-between mx-auto h-full"
+        className="flex items-center justify-between  mx-auto h-full"
         id="up-btn"
       >
         <div className="">
