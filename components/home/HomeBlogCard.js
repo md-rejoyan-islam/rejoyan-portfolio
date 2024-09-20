@@ -4,6 +4,8 @@ import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import photo from "@/app/public/images/image.png";
 import { useRef } from "react";
+import { ExternalLinkIcon } from "lucide-react";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export default function HomeBlogCard({ index }) {
   const viewRef = useRef();
@@ -79,6 +81,17 @@ export default function HomeBlogCard({ index }) {
             <div className="">4 min</div>
           </div>
         </div>
+        <ul className="flex gap-2 items-center md:flex-col pt-4 md:hidden">
+          <li>
+            <a
+              href=""
+              className=" flex items-center gap-2 border-button-bg  text-button hover:bg-button-bg h-fit  rounded-md px-2 py-1 text-sm border "
+            >
+              <span>View</span>
+              <FaExternalLinkAlt />
+            </a>
+          </li>
+        </ul>
       </div>
     </motion.div>
   );

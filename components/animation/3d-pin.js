@@ -58,17 +58,19 @@ export const PinPerspective = ({ title, href, links }) => {
   return (
     <motion.div className="pointer-events-none h-[500px]  w-full flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
-        <div className="absolute top-10 inset-x-0  flex justify-center  gap-2  ">
-          {links?.map((link, index) => (
-            <a
-              href={href}
-              target={"_blank"}
-              className="relative flex space-x-2 items-center border-project-card-border border z-10 rounded-md py-2 px-3 ring-1"
-              key={index}
-            >
-              {link?.icon}
-            </a>
-          ))}
+        <div className="absolute top-10 inset-x-0    ">
+          <ul className="flex flex justify-center  gap-2">
+            {links?.map((link, index) => (
+              <a
+                href={href}
+                target={"_blank"}
+                className="relative flex space-x-2 items-center hover:bg-button border-project-card-border border z-[1000] rounded-md py-1.5 px-2.5 ring-1"
+                key={index}
+              >
+                {link?.icon}
+              </a>
+            ))}
+          </ul>
         </div>
 
         <div
