@@ -35,7 +35,7 @@ export default function HomePorject({ direction }) {
             Halcyon Theme Atom
           </h3>
 
-          <p className=" rounded-md text-text-secondary backdrop-blur-md md:text-text-primary py-2 md:px-4 h-full md:bg-[#287a7a3a] ">
+          <p className=" rounded-md text-text-secondary backdrop-blur-md md:text-text-primary py-2 md:px-4 h-full md:bg-project-card-bg-secondary ">
             A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
             and more. Available on Visual Studio Marketplace, Package Control,
             Atom Package Manager, and npm.

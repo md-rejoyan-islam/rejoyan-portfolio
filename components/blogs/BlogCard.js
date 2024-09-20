@@ -10,7 +10,7 @@ export default function BlogCard({ index }) {
   const isInView = useInView(viewRef, { once: true });
   return (
     <motion.div
-      className="w-full p-4 sm:p-6  border  rounded-[20px] border-project-card-border bg-project-card-background"
+      className="w-full p-4 sm:p-6  border  rounded-[20px] border-project-card-border bg-project-card-background backdrop-blur-3xl "
       key={index}
       initial={{ opacity: 0, x: 150 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -76,7 +76,7 @@ export default function BlogCard({ index }) {
               <h2 className="relative z-10 transition duration-200 ease-in-out text-2xl font-incognito font-semibold tracking-tight ">
                 How to run Localhost on your Mobile Device using Ngrok
               </h2>
-              <div className="absolute inset-0 bg-blue-500 transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></div>
+              <div className="absolute inset-0 bg-text-root dark:bg-button transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></div>
             </div>
 
             <p className=" text-text-secondary text-[0.95rem]">

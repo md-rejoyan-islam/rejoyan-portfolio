@@ -42,9 +42,9 @@ export default function ThemeSwitch() {
       />
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-full origin-top-right rounded-md bg-dropdown shadow-lg">
+        <div className="absolute right-0 mt-2 w-full origin-top-right rounded-md text-text-primary bg-dropdown shadow-lg">
           <div
-            className="py-1 bg-project-card-background text-text-primary"
+            className="py-1 "
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"
@@ -58,7 +58,9 @@ export default function ThemeSwitch() {
                     setIsOpen(false);
                   }}
                   className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
-                    themeItem === theme ? "bg-selected  hover:bg-selected" : ""
+                    themeItem === theme
+                      ? "bg-selected text-text-root  hover:bg-selected"
+                      : ""
                   }`}
                 >
                   {themeItem}

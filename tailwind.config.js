@@ -21,6 +21,7 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         "project-card-text": "var(--project-card-text)",
         "project-card-background": "var(--project-card-background)",
+        "project-card-bg-secondary": "var(--project-card-bg-secondary)",
         "project-card-border": "var(--project-card-border)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -80,5 +81,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // require("@codaworks/react-glow/tailwind"),
+  ],
 };

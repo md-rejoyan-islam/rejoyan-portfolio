@@ -62,19 +62,32 @@
   /* transform: rotate(-35deg) skew(20deg); */
 }
 
+.glow-card {
+  background: conic-gradient(
+    from 180deg at 50% 70%,
+    #f626af 0deg,
+    #8228ec 72.0000010728836deg,
+    #f626af 144.0000021457672deg,
+    #0025ba 216.00000858306885deg,
+    #f626af 288.0000042915344deg,
+    #fafafa 1turn
+  );
+}
+
 @layer base {
   :root {
     --project-card-text: #222;
-    --project-card-background: #f7f6f6;
-    --project-card-border: #d3d3d3;
+    --project-card-background: #f2f7fc;
+    --project-card-bg-secondary: #d1d2d41a;
+    --project-card-border: #dfeaee;
     --background-secondary: #fff;
-    --moving-border: #ff00a2;
-    --button: #ff00a2;
-    --button-text: #fff;
-    --text-root: #000;
-    --text-primary: #b2bbcf;
-    --text-secondary: #7b89a8;
-    --button-bg: #192742;
+    --moving-border: #223eac;
+    --button: #1c01c8;
+    --button-text: #201ce2;
+    --text-root: #0088ff;
+    --text-primary: #1f2937;
+    --text-secondary: #374151;
+    --button-bg: #d8e6fd;
 
     --primary: 0 0% 9%;
     --secondary: 0 0% 96.1%;
@@ -113,6 +126,7 @@
   .dark {
     --project-card-text: #fff;
     --project-card-background: #0c1327;
+    --project-card-bg-secondary: #287a7a3a;
     --project-card-border: #312f55;
     --moving-border: #3badff;
     --button: #00c7ff;
@@ -127,8 +141,8 @@
     --background: 0 0% 3.9%;
     --background-secondary: #000319;
 
-    --dropdown: #2d2d2d;
-    --dropdown-hover: #454545;
+    --dropdown: #1f1d45;
+    --dropdown-hover: #073651d3;
     --button-secondary: #1d1d1d;
     --selected: #324e70;
     --logo-shadow: #0a2e36;
