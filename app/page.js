@@ -22,7 +22,7 @@ import About from "@/components/home/About";
 export default function Home() {
   return (
     <div className="px-2 sm:px-4">
-      {/* about  */}
+      {/* about  part */}
       <About />
 
       {/* skill */}
