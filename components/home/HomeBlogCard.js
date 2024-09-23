@@ -81,7 +81,7 @@ export default function HomeBlogCard({ index }) {
             <div className="">4 min</div>
           </div>
         </div>
-        <ul className="flex gap-2 items-center md:flex-col pt-4 md:hidden">
+        <ul className="flex gap-2 items-center md:flex-col pt-4 md:hidden ">
           <li>
             <a
               href=""
