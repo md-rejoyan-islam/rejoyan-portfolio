@@ -1,27 +1,27 @@
 "use client";
-import Lottie from "lottie-react";
-import {
-  FaFacebookSquare,
-  FaGithubSquare,
-  FaLinkedin,
-  FaUserNinja,
-} from "react-icons/fa";
+
+import { FaUserNinja } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 import { TypeAnimation } from "react-type-animation";
 
-import file from "../../app/public/Animation - 1727036180998.json";
+import ColorMovingButton from "../animation/ColorMovingButton";
+import ShowLottieFile from "./ShowLottieFile";
+
+import lootieAnimation from "../../app/public/bannerAnimation.json";
+import Link from "next/link";
 
 export default function Banner() {
   return (
     <div className=" mt-16 mb-32 px-0 grid grid-cols-3">
       <div className="col-span-2">
-        <h2 className="text-text-root text-3xl font-semibold">Hi, I&apos;m </h2>
+        <h2 className="text-text-primary text-3xl font-semibold">
+          Hi, I&apos;m{" "}
+        </h2>
         <h2 className="  text-[35px] sm:text-[45px] md:text-[55px] lg:text-[60px] font-semibold ">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r  to-[#b96ef4]  from-[#5b60eb] via-[#7c52e6]">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r  to-[#2a0ca1]  via-[#5f3573] from-[#b52ac4] ">
             Md. Rejoyan Islam
           </span>{" "}
           <br />
-          <span className="text-[#8892b0]">I build things for the web.</span>
         </h2>
 
         {/* type data  */}
@@ -35,10 +35,15 @@ export default function Banner() {
           ]}
           wrapper="span"
           speed={50}
-          style={{ fontSize: "2em", display: "inline-block" }}
+          className="bg-clip-text inline-block text-[3em] text-transparent bg-gradient-to-r from-[#4d1cb8] via-[#12e435] to-[#b72a77]"
           repeat={Infinity}
         />
         {/* type data  */}
+        <h2 className="  text-[3em] font-semibold ">
+          <span className="text-text-secondary">
+            I build things for the web.
+          </span>
+        </h2>
 
         <div className="lg:w-2/3 pt-6">
           <p className="text-[#8892b0] text-[17px] sm:text-lg">
@@ -49,23 +54,33 @@ export default function Banner() {
         </div>
 
         <div className="resume flex gap-4 items-center py-4">
-          <div className="bg-gradient-to-r to-pink-500  from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600 delay-200 ">
-            <button className="bg-[#0a192f] hover:gap-4  transition-all rounded-full uppercase py-2  px-3  flex gap-2 items-center">
+          <ColorMovingButton>
+            <Link
+              href={"#contact"}
+              className="bg-background-secondary hover:gap-4 transition-all rounded-xl uppercase py-2 px-3 flex gap-2 items-center"
+              // onClick={hashAdded}
+            >
               <span>Contact me</span>
               <FaUserNinja />
-            </button>
-          </div>
-          <div className="bg-gradient-to-r to-pink-500  from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600 delay-200 ">
-            <button className="bg-[#0a192f] hover:gap-4  transition-all rounded-full uppercase py-2  px-3  flex gap-2 items-center">
+            </Link>
+          </ColorMovingButton>
+          <ColorMovingButton>
+            <button className="bg-background-secondary hover:gap-4  transition-all rounded-xl uppercase py-2  px-3  flex gap-2 items-center">
               <span>Get resume</span>
               <MdFileDownload />
             </button>
-          </div>
+          </ColorMovingButton>
         </div>
       </div>
 
-      <div className="w-full col-span-1 flex justify-center items-center">
-        <Lottie animationData={file} loop={false} className="w-full" />
+      <div className="w-full col-span-1 flex justify-center items-center relative">
+        <div className="absolute top-0 -left-40">
+          <ShowLottieFile
+            src={lootieAnimation}
+            loop={true}
+            className={"w-[120%]"}
+          />
+        </div>
       </div>
     </div>
   );

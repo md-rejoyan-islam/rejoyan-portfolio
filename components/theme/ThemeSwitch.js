@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { FiSun } from "react-icons/fi";
 import { useOnClickOutside } from "usehooks-ts";
 import MagicButton from "../animation/MagicButton";
+import ColorMovingButton from "../animation/ColorMovingButton";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -15,17 +16,15 @@ export default function ThemeSwitch() {
   useOnClickOutside(ref, () => setIsOpen(false));
   if (!mounted)
     return (
-      <Button
-        size="small"
-        type="button"
-        className="text-destructive border inline-flex w-fit min-w-[95px] items-center justify-between gap-3"
-        id="options-menu"
-        aria-expanded={isOpen}
-        onClick={() => {}}
-      >
-        Theme
-        <FiSun />
-      </Button>
+      <ColorMovingButton>
+        <button
+          className="bg-background-secondary hover:gap-4 transition-all rounded-xl uppercase py-2 px-3 flex gap-2 items-center"
+          // onClick={hashAdded}
+        >
+          <span>Theme</span>
+          <FiSun />
+        </button>
+      </ColorMovingButton>
     );
 
   const toggleDropdown = () => {
@@ -34,12 +33,15 @@ export default function ThemeSwitch() {
 
   return (
     <div ref={ref} className="relative inline-block text-left">
-      <MagicButton
-        title={"Theme"}
-        icon={<FiSun />}
-        position={"right"}
-        handleClick={toggleDropdown}
-      />
+      <ColorMovingButton>
+        <button
+          className="bg-background-secondary hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
+          onClick={toggleDropdown}
+        >
+          <span>Theme</span>
+          <FiSun />
+        </button>
+      </ColorMovingButton>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-full origin-top-right rounded-md text-text-primary bg-dropdown shadow-lg">

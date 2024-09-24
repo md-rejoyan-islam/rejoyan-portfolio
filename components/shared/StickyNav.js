@@ -45,7 +45,7 @@ export const StickyNav = ({ className }) => {
         className={cn(
           ` ${
             visible
-              ? " shadow-[0_10px_30px_-10px_rgba(2,12,27,0.7)] bg-[#4854650e] "
+              ? " shadow-[0_10px_30px_-10px_var(--navbar-shadow)]"
               : "shadow-none"
           } w-full  fixed   backdrop-blur-lg  inset-x-0 mx-auto  z-[5000]   items-center justify-center`,
           className

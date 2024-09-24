@@ -8,6 +8,11 @@
   inherits: false;
 }
 
+/* smoooth scrolling  */
+html {
+  scroll-behavior: smooth;
+}
+
 .moving-card {
   padding: 1.5px;
   overflow: hidden;
@@ -74,6 +79,24 @@
   );
 }
 
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: var(--button-gradient);
+  background-size: 400% 400%;
+  animation: gradient-animation 5s ease infinite;
+}
+
 @layer base {
   :root {
     --project-card-text: #222;
@@ -88,6 +111,8 @@
     --text-primary: #1f2937;
     --text-secondary: #374151;
     --button-bg: #d3f8e4;
+    --navbar-shadow: #d4d4d4b3;
+    --button-gradient: linear-gradient(270deg, #2504ff, #12e435, #ffc107);
 
     --primary: 0 0% 9%;
     --secondary: 0 0% 96.1%;
@@ -135,6 +160,8 @@
     --text-root: #fff;
     --text-primary: #b2bbcf;
     --text-secondary: #7b89a8;
+    --navbar-shadow: #020c1bb3;
+    --button-gradient: linear-gradient(270deg, #4d1cb8, #12e435, #b72a77);
 
     --primary: 0 0% 98%;
     --secondary: 0 0% 14.9%;

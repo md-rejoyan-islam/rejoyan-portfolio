@@ -17,7 +17,9 @@ export default function ScrollToTopButton() {
   const [pagePercentage, setPagePercentage] = useState(0);
 
   useMotionValueEvent(opacity, "change", (value) => {
-    const pageY = document?.documentElement?.scrollHeight - window.innerHeight;
+    const pageY =
+      typeof window !== "undefined" &&
+      document?.documentElement?.scrollHeight - window.innerHeight;
     controls.start({ opacity: value / 100 });
     const percentage = Math.round(
       (Math.floor(value) / Math.floor(pageY)) * 100
@@ -26,10 +28,6 @@ export default function ScrollToTopButton() {
       setPagePercentage(percentage);
     }
   });
-
-  const x = 12; // Center X
-  const y = 28; // Center Y
-  const radius = 9; // Radius
 
   return (
     <motion.div

@@ -4,7 +4,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 export default function Contact() {
   return (
-    <section className="py-10">
+    <section className="py-10" id="contact">
       <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
         Get In Touch
       </h2>

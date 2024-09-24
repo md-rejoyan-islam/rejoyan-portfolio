@@ -23,6 +23,7 @@ module.exports = {
         "project-card-background": "var(--project-card-background)",
         "project-card-bg-secondary": "var(--project-card-bg-secondary)",
         "project-card-border": "var(--project-card-border)",
+        "navbar-shadow": "var(--navbar-shadow)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

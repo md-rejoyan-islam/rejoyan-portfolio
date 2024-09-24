@@ -1,9 +1,10 @@
 "use client";
 import { RiMenu3Line } from "react-icons/ri";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ThemeSwitch from "../theme/ThemeSwitch";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { animate, stagger, motion, useAnimate } from "framer-motion";
 
 export default function Navbar() {
   // mobile menu state
@@ -60,6 +61,21 @@ export default function Navbar() {
   // const router = useRouter();
   const pathname = usePathname();
 
+  const [scope, animate] = useAnimate();
+  const staggerList = stagger(0.1, { startDelay: 0 });
+
+  // when page load li item show one by one with style
+  useEffect(() => {
+    animate(
+      "li",
+      { opacity: 1, scale: 1, x: 0 },
+      {
+        duration: 0.2,
+        delay: staggerList,
+      }
+    );
+  }, [staggerList, animate]);
+
   return (
     <header
       className={`text-text-secondary h-[70px] max-container mx-auto   px-4 `}
@@ -71,13 +87,17 @@ export default function Navbar() {
         <div className="">
           {/* for medium and large screens  */}
           <nav>
-            <ul className="hidden md:flex  gap-10 justify-center items-center">
+            <ul
+              className="hidden md:flex  gap-10 justify-center items-center"
+              ref={scope}
+            >
               {links.map((link, index) => (
-                <li
+                <motion.li
                   className={`${
                     pathname === link.href ? "text-text-root" : ""
                   } hover:text-text-root group`}
                   key={index}
+                  style={{ opacity: 0, scale: 0.3, x: -50 }}
                 >
                   <div className="relative overflow-hidden inline-block py-1 px-0">
                     <Link href={link.href} className="relative z-10">
@@ -85,7 +105,7 @@ export default function Navbar() {
                     </Link>
                     <div className="absolute inset-0 border-b-2 border-button transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0"></div>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </nav>
