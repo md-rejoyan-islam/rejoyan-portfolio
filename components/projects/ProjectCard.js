@@ -27,13 +27,13 @@ export default function ProjectCard({ index, project }) {
     >
       <div className=" backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
-          src={photo}
+          src={project?.banner}
           alt="Currencee"
           loading="lazy"
           width={200}
           height={200}
           decoding="async"
-          className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2 w-full object-fill h-[220px]"
+          className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-1 w-full object-cover  h-[180px]"
           style={{ color: "transparent" }}
         />
         <div className="pt-3">
@@ -73,7 +73,7 @@ export default function ProjectCard({ index, project }) {
         </div>
       </div>
       <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
-        <div className="bg-[rgba(0,255,145,0.54)]  dark:bg-[rgba(115,0,255,0.4)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
+        <div className="bg-[rgba(0,255,145,0.33)]  dark:bg-[rgba(115,0,255,0.48)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
     </motion.div>
   );

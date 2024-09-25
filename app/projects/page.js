@@ -2,12 +2,13 @@
 import { PinContainer } from "@/components/animation/3d-pin";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 import { stagger, useAnimate, motion } from "framer-motion";
 import { useEffect } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export default function Projects() {
-  const projects = [
+  const projectss = [
     {
       name: "Currencee",
       description:
@@ -197,7 +198,7 @@ export default function Projects() {
           improved.
         </p>
       </div>
-      <div className="pt-12 ">
+      <div className="py-11 ">
         <ul className="flex items-center gap-4" ref={scope}>
           {filters?.map((item, index) => (
             <motion.li key={index} style={{ opacity: 0, scale: 0.3, x: -50 }}>
@@ -215,11 +216,15 @@ export default function Projects() {
           ))}
         </ul>
       </div>
-      <div className="py-6 relative">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 h-full gap-x-5 gap-y-8 items-center relative">
+      <div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 items-center relative">
           {projects?.map((project, index) => (
             <div key={index} className="h-full">
-              <PinContainer title={"adeweere"} links={project?.links}>
+              <PinContainer
+                title={"adeweere"}
+                project={project}
+                links={project?.links}
+              >
                 <ProjectCard project={project} index={index} />
               </PinContainer>
             </div>

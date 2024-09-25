@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import ProjectCard from "../projects/ProjectCard";
 
 export const PinContainer = ({
   children,
-  title,
-  href,
+  project,
   className,
   containerClassName,
   links,
@@ -25,7 +26,7 @@ export const PinContainer = ({
   return (
     <div
       className={cn(
-        "relative group/pin z-50 w-full h-full  cursor-pointer",
+        "relative group/pin  z-50   cursor-pointe",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
@@ -36,39 +37,43 @@ export const PinContainer = ({
           perspective: "1000px",
           transform: "rotateX(70deg) translateZ(0deg)",
         }}
-        className="absolute h-full left-1/2 w-full top-1/2 ml-[0.09375rem]  -translate-x-1/2 -translate-y-1/2"
+        className="absolute  h-full left-1/2 w-full top-1/2 ml-[0.09375rem]  -translate-x-1/2 -translate-y-1/2"
       >
         <div
           style={{
             transform: transform,
           }}
-          className="absolute  w-full left-1/2 top-1/2  flex justify-start items-start  rounded-2xl   group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden"
+          className="absolute   w-full left-1/2 top-1/2  flex justify-start items-start  rounded-2xl   group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden"
         >
-          <div className={cn(" relative  z-50 h-full ", className)}>
+          <div className={cn(" relative w-full h-full ", className)}>
             {children}
           </div>
         </div>
       </div>
-      <PinPerspective title={title} href={href} links={links} />
+      <PinPerspective project={project} links={links} />
     </div>
   );
 };
 
-export const PinPerspective = ({ title, href, links }) => {
+export const PinPerspective = ({ links, project }) => {
   return (
-    <motion.div className="pointer-events-none h-[500px]  w-full flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className="z-[60] h-full  w-full flex items-center justify-center opacity-0 group-hover/pin:opacity-100  transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
-        <div className="absolute top-10 inset-x-0    ">
-          <ul className="flex flex justify-center  gap-2">
+        <div className="invisible w-[100%] overflow-hidden">
+          {/* project card added here for take width and height */}
+          <ProjectCard project={project} />
+        </div>
+        <div className="absolute top-10 inset-x-0 flex justify-center   ">
+          <ul className="flex justify-center  gap-2 z-10">
             {links?.map((link, index) => (
-              <a
-                href={href}
+              <Link
+                href={link?.href || "#"}
                 target={"_blank"}
-                className="relative flex space-x-2 items-center hover:bg-button border-project-card-border border z-[1000] rounded-md py-1.5 px-2.5 ring-1"
+                className="relative cursor-pointer flex space-x-2 items-center hover:bg-project-card-bg-secondary border-project-card-border border rounded-md py-1.5 px-2.5 ring-1"
                 key={index}
               >
                 {link?.icon}
-              </a>
+              </Link>
             ))}
           </ul>
         </div>
