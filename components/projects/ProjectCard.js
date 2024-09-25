@@ -1,28 +1,8 @@
 "use client";
-
-import { useInView, motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
-
-export default function ProjectCard({ index, project }) {
-  const viewRef = useRef();
-  const isInView = useInView(viewRef, { once: true });
-
+export default function ProjectCard({ project }) {
   return (
-    <motion.div
-      className="moving-card "
-      key={index}
-      initial={{ opacity: 0, x: 150 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{
-        duration: 0.3,
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        delay: index * 0.1,
-      }}
-      ref={viewRef}
-    >
+    <div className="moving-card ">
       <div className=" backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={project?.banner}
@@ -73,6 +53,6 @@ export default function ProjectCard({ index, project }) {
       <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
         <div className="bg-[rgba(0,255,145,0.33)]  dark:bg-[rgba(115,0,255,0.48)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
-    </motion.div>
+    </div>
   );
 }

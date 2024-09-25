@@ -8,10 +8,6 @@ import { stagger, useAnimate, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect } from "react";
 
-import { FaFreeCodeCamp } from "react-icons/fa";
-import { FaHashnode } from "react-icons/fa6";
-import { SiSanity } from "react-icons/si";
-
 export default function Blogs() {
   const [scope, animate] = useAnimate();
   const [blogScope, BlogAnimate] = useAnimate();

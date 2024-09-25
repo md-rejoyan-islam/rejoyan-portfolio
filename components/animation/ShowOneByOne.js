@@ -9,8 +9,8 @@ export default function ShowOneByOne({ children, index }) {
   return (
     <motion.div
       key={index}
-      initial={{ opacity: 0, x: 250 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      initial={{ opacity: 0, x: -50, scale: 0.3 }}
+      animate={isInView ? { opacity: 1, x: 0, scale: 1 } : {}}
       transition={{
         duration: 0.3,
         type: "spring",

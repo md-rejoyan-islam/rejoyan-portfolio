@@ -1,10 +1,11 @@
 "use client";
 import { PinContainer } from "@/components/animation/3d-pin";
+import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
-import { projects } from "@/data/projects";
+import { projects as projectsData } from "@/data/projects";
 import { stagger, useAnimate, motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function Projects() {
   const filters = [
     {
@@ -27,6 +28,9 @@ export default function Projects() {
   const [scopeRef, projectAnimate] = useAnimate();
   const projectStaggerList = stagger(0.2, { startDelay: 1.3 });
 
+  const [projects, setProject] = useState([...projectsData]);
+  const [filter, setFilter] = useState("All");
+
   useEffect(() => {
     animate(
       "li",
@@ -40,7 +44,7 @@ export default function Projects() {
 
   useEffect(() => {
     projectAnimate(
-      "section",
+      "article",
       { opacity: 1, scale: 1, x: 0 },
       {
         duration: 0.2,
@@ -79,8 +83,24 @@ export default function Projects() {
             <motion.li key={index} style={{ opacity: 0, scale: 0.3, x: -50 }}>
               <Button
                 size="small"
+                onClick={() => {
+                  setFilter(item?.name);
+                  if (item?.name === "All") {
+                    setProject([...projectsData]);
+                  } else {
+                    setProject(
+                      [...projectsData].filter((project) =>
+                        project.techStack.find((tech) => {
+                          return (
+                            tech.toLowerCase() === item?.name.toLowerCase()
+                          );
+                        })
+                      ) || []
+                    );
+                  }
+                }}
                 className={` px-2.5 text-[12px] py-1 border uppercase hover:bg-button-bg ${
-                  index === 0
+                  filter === item?.name
                     ? "text-button bg-button-bg"
                     : "text-text-secondary bg-transparent hover:bg-transparent hover:text-button"
                 } `}
@@ -91,11 +111,7 @@ export default function Projects() {
           ))}
         </ul>
       </div>
-      <div
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ delay: 1.4 }}
-      >
+      <div>
         <motion.section
           className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 items-center relative"
           ref={scopeRef}
@@ -103,21 +119,31 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
-          {projects?.map((project, index) => (
-            <motion.section
-              key={index}
-              className="h-full"
-              style={{ opacity: 0, scale: 0.3, x: -50 }}
-            >
-              <PinContainer
-                title={"adeweere"}
-                project={project}
-                links={project?.links}
+          {projects?.length ? (
+            projects?.map((project, index) => (
+              <motion.article
+                key={index}
+                className="h-full"
+                style={{ opacity: 0, scale: 0.3, x: -50 }}
               >
-                <ProjectCard project={project} index={index} />
-              </PinContainer>
-            </motion.section>
-          ))}
+                <ShowOneByOne index={index}>
+                  <PinContainer
+                    title={"adeweere"}
+                    project={project}
+                    links={project?.links}
+                  >
+                    <ProjectCard project={project} index={index} />
+                  </PinContainer>
+                </ShowOneByOne>
+              </motion.article>
+            ))
+          ) : (
+            <motion.article className="text-center sm:col-span-2 lg:col-span-3 xl:col-span-4">
+              <h2 className="text-2xl  block text-red-400 font-incognito font-semibold tracking-tight">
+                No projects found
+              </h2>
+            </motion.article>
+          )}
         </motion.section>
       </div>
     </div>
