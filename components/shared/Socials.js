@@ -1,29 +1,22 @@
-import { FaInstagram } from "react-icons/fa";
-import { FiLinkedin } from "react-icons/fi";
-import { LuGithub, LuTwitter } from "react-icons/lu";
+"use client";
+import { socialLinks } from "@/data/socials";
+import { stagger, useAnimate, motion } from "framer-motion";
+import { useEffect } from "react";
+
 export default function Socials({ direction = "row", position = "relative" }) {
-  const socials = [
-    {
-      name: "GitHub",
-      url: "mailto:",
-      icon: <LuGithub />,
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/bchiang7",
-      icon: <FaInstagram />,
-    },
-    {
-      name: "Twitter",
-      url: "https://twitter.com/bchiang7",
-      icon: <LuTwitter />,
-    },
-    {
-      name: "Linkedin",
-      url: "https://www.linkedin.com/in/bchiang7",
-      icon: <FiLinkedin />,
-    },
-  ];
+  const [scope, animate] = useAnimate();
+
+  const staggerList = stagger(0.1, { startDelay: 0.6 });
+  useEffect(() => {
+    animate(
+      "li",
+      { opacity: 1, scale: 1, x: 0 },
+      {
+        duration: 0.2,
+        delay: staggerList,
+      }
+    );
+  }, [staggerList, animate]);
 
   return (
     <div
@@ -37,6 +30,7 @@ export default function Socials({ direction = "row", position = "relative" }) {
         className={`flex flex-${direction} gap-9 items-center ${
           direction === "col" && "max-xl:gap-6 "
         } text-xl `}
+        ref={scope}
       >
         {/* {socials.map((social, index) => (
           <li key={index}>
@@ -45,8 +39,12 @@ export default function Socials({ direction = "row", position = "relative" }) {
             </a>
           </li>
         ))} */}
-        {socials.map((social, index) => (
-          <li className="icons" key={index}>
+        {socialLinks.map((social, index) => (
+          <motion.li
+            className="icons"
+            key={index}
+            style={{ opacity: 0, scale: 0.3, x: -50 }}
+          >
             <a
               href={social.url}
               className="inline-flex items-center relative group text-button-text "
@@ -70,7 +68,7 @@ export default function Socials({ direction = "row", position = "relative" }) {
                 {social.name}
               </div>
             </a>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
