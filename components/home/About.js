@@ -7,29 +7,29 @@ export default function About() {
       <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
         About Me
       </h2>
-      <div className="pt-4">
+      <div className="pt-10">
         <div className=" grid grid-cols-1 lg:grid-cols-5 lg:gap-40 gap-20  text-[#8892b0] justify-items-center ">
-          <div className="flex-1 space-y-6 grow lg:col-span-3">
-            <p>
-              Hello! My name is Brittany and I enjoy creating things that live
-              on the internet. My interest in web development started back in
-              2012 when I decided to try editing custom Tumblr themes — turns
-              out hacking together a custom reblog button taught me a lot about
-              HTML & CSS!
-            </p>
-            <p>
-              Fast-forward to today, and I’ve had the privilege of working at an
-              advertising agency, a start-up, a huge corporation, and a
-              student-led design studio. My main focus these days is building
-              accessible, inclusive products and digital experiences at
-              Upstatement for a variety of clients.
-            </p>
-            <p>
-              I also recently launched a course that covers everything you need
-              to build a web app with the{" "}
-              <span className="text-[#64ffda] ">Spotify API</span> using Node &
-              React.
-            </p>
+          <div className=" grid place-content-center lg:col-span-3">
+            <div className="space-y-5">
+              <p>
+                Hello! My name is Md Rejoyan Islam, and I&apos;m a full-stack
+                web developer with a passion for creating impactful digital
+                experiences. My journey began with JavaScript and Python, and
+                I&apos;ve since mastered both SQL and NoSQL databases, ensuring
+                efficient data solutions.
+              </p>
+              <p>
+                I specialize in React.js with Next.js for modern, user-friendly
+                interfaces, utilizing Redux for state management, and Node.js
+                for robust server-side development. I also build APIs using
+                RESTful or GraphQL approaches.
+              </p>
+              <p>
+                I&apos;m always eager to learn and adapt to new technologies,
+                and I&apos;m excited about the potential of tech to solve
+                problems and enhance user experiences.
+              </p>
+            </div>
           </div>
           <div className="flex-1  lg:col-span-2 px-6 max-w-[400px]">
             <figure className="relative" id="imgFigure">
