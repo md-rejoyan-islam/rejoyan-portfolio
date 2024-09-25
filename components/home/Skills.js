@@ -96,8 +96,8 @@ export default function Skills() {
       </h2>
       <div className="pt-4">
         <Marquee
-          gradient={true}
-          gradientColor="#000319"
+          // gradient={true}
+          // gradientColor="#000319"
           speed={80}
           pauseOnHover={true}
           pauseOnClick={true}

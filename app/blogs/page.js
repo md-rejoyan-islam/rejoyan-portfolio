@@ -113,7 +113,7 @@ export default function Blogs() {
               <Link
                 rel="noopener"
                 target="_blank"
-                className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group"
+                className="flex items-center group"
                 href={site.link}
               >
                 {site.icon}

@@ -44,10 +44,6 @@ export default function Navbar() {
       href: "/experience",
     },
     {
-      name: "Work",
-      href: "/work",
-    },
-    {
       name: "Contact",
       href: "/contact",
     },

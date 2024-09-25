@@ -6,13 +6,13 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import photo from "@/app/public/images/image.png";
 import { useRef } from "react";
 
-export default function ProjectCard({ index }) {
+export default function ProjectCard({ index, project }) {
   const viewRef = useRef();
   const isInView = useInView(viewRef, { once: true });
 
   return (
     <motion.div
-      className="moving-card"
+      className="moving-card "
       key={index}
       initial={{ opacity: 0, x: 150 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -25,7 +25,7 @@ export default function ProjectCard({ index }) {
       }}
       ref={viewRef}
     >
-      <div className="border border-project-card-border backdrop-blur-xl relative group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
+      <div className=" backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={photo}
           alt="Currencee"
@@ -38,56 +38,42 @@ export default function ProjectCard({ index }) {
         />
         <div className="pt-3">
           <h2 className="text-xl font-medium tracking-wide mb-1 text-text-primary ">
-            Currencee
+            {project?.name}
           </h2>
           <div className="text-sm text-text-secondary ">
-            An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium
-            bespoke and ready-to-wear brand that provides high-quality yet
-            affordable female and male wears, hoodies and joggers co-ord sets,
-            luxury handmade unisex footwear and bags.
+            {project?.description}
           </div>
         </div>
         <div className="py-2.5">
           <ul className="flex items-center gap-x-3 gap-y-2 flex-wrap">
-            <li className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]">
-              Next Js
-            </li>
-            <li className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]">
-              Tailwind CSS
-            </li>
-            <li className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]">
-              Tanstack Query
-            </li>
-            <li className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]">
-              Sanity CMS
-            </li>
-            <li className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]">
-              Paystack
-            </li>
+            {project?.techStack?.map((tech, index) => (
+              <li
+                className="text-nowrap text-button border bg-button-bg px-2 py-1 rounded-md text-[10px]"
+                key={index}
+              >
+                {tech}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="absolut top-3 right-3 z-10 md:hidden ">
           <ul className="flex gap-2 items-center">
-            <li>
-              <a
-                href=""
-                className=" flex items-center gap-2 border border-project-card-border  hover:bg-button-bg text-button h-fit rounded-md px-2 text-sm py-1.5"
-              >
-                <span>GitHub </span>
-                <FaGithub />
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className=" flex items-center gap-2 border border-project-card-border  hover:bg-button-bg text-button h-fit rounded-md text-sm px-2 py-1.5"
-              >
-                <span>Preview </span>
-                <FaExternalLinkAlt />
-              </a>
-            </li>
+            {project?.links?.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link?.href}
+                  className=" flex items-center gap-2 border border-project-card-border  hover:bg-button-bg text-button h-fit rounded-md px-2 text-sm py-1.5"
+                >
+                  <span>{link?.name} </span>
+                  {link?.icon}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
+      </div>
+      <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
+        <div className="bg-[rgba(0,255,145,0.54)]  dark:bg-[rgba(115,0,255,0.4)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
     </motion.div>
   );

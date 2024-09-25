@@ -1,6 +1,9 @@
+"use client";
 import { PinContainer } from "@/components/animation/3d-pin";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
+import { stagger, useAnimate, motion } from "framer-motion";
+import { useEffect } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export default function Projects() {
@@ -16,8 +19,18 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
     {
       name: "Currencee",
@@ -30,8 +43,18 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
     {
       name: "Currencee",
@@ -44,8 +67,18 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
     {
       name: "Currencee",
@@ -58,8 +91,18 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
     {
       name: "Currencee",
@@ -72,8 +115,18 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
     {
       name: "Currencee",
@@ -86,10 +139,49 @@ export default function Projects() {
         "Sanity CMS",
         "Paystack",
       ],
-      github: "",
-      live: "",
+      links: [
+        {
+          name: "Github",
+          href: "",
+          icon: <FaGithub className="text-button" />,
+        },
+        {
+          name: "Live",
+          href: "",
+          icon: <FaExternalLinkAlt className="text-button" />,
+        },
+      ],
     },
   ];
+
+  const filters = [
+    {
+      name: "All",
+    },
+    {
+      name: "Redux",
+    },
+    {
+      name: "Next.Js",
+    },
+    {
+      name: "Work",
+    },
+  ];
+
+  const [scope, animate] = useAnimate();
+  const staggerList = stagger(0.1, { startDelay: 0 });
+
+  useEffect(() => {
+    animate(
+      "li",
+      { opacity: 1, scale: 1, x: 0 },
+      {
+        duration: 0.2,
+        delay: staggerList,
+      }
+    );
+  }, [staggerList, animate]);
 
   return (
     <div className="pt-10 pb-12">
@@ -106,60 +198,28 @@ export default function Projects() {
         </p>
       </div>
       <div className="pt-12 ">
-        <ul className="flex items-center gap-4">
-          <li>
-            <Button
-              size="small"
-              className="text-button bg-button-bg px-2.5 text-[12px] py-1 border uppercase hover:bg-button-bg  "
-            >
-              All
-            </Button>
-          </li>
-          <li>
-            <Button
-              size="small"
-              className="text-text-secondary bg-transparent hover:bg-transparent hover:text-button px-2.5 text-[12px] py-1 border border-project-card-border uppercase"
-            >
-              Redux
-            </Button>
-          </li>
-          <li>
-            <Button
-              size="small"
-              className="text-text-secondary bg-transparent hover:bg-transparent hover:text-button px-2.5 text-[12px] py-1 border border-project-card-border uppercase"
-            >
-              Next.Js
-            </Button>
-          </li>
-          <li>
-            <Button
-              size="small"
-              className="text-text-secondary bg-transparent hover:bg-transparent hover:text-button px-2.5 text-[12px] py-1 border border-project-card-border uppercase"
-            >
-              Work
-            </Button>
-          </li>
+        <ul className="flex items-center gap-4" ref={scope}>
+          {filters?.map((item, index) => (
+            <motion.li key={index} style={{ opacity: 0, scale: 0.3, x: -50 }}>
+              <Button
+                size="small"
+                className={` px-2.5 text-[12px] py-1 border uppercase hover:bg-button-bg ${
+                  index === 0
+                    ? "text-button bg-button-bg"
+                    : "text-text-secondary bg-transparent hover:bg-transparent hover:text-button"
+                } `}
+              >
+                {item?.name}
+              </Button>
+            </motion.li>
+          ))}
         </ul>
       </div>
       <div className="py-6 relative">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 h-full gap-x-5 gap-y-8 items-center relative">
           {projects?.map((project, index) => (
             <div key={index} className="h-full">
-              <PinContainer
-                title={"adeweere"}
-                links={[
-                  {
-                    name: "Github",
-                    href: project.github,
-                    icon: <FaGithub className="text-button" />,
-                  },
-                  {
-                    name: "Live",
-                    href: project.live,
-                    icon: <FaExternalLinkAlt className="text-button" />,
-                  },
-                ]}
-              >
+              <PinContainer title={"adeweere"} links={project?.links}>
                 <ProjectCard project={project} index={index} />
               </PinContainer>
             </div>

@@ -93,6 +93,9 @@ export default function HomeBlogCard({ index }) {
           </li>
         </ul>
       </div>
+      <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
+        <div className="bg-[rgba(0,255,145,0.46)]  dark:bg-[rgba(255,0,234,0.66)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
+      </div>
     </motion.div>
   );
 }

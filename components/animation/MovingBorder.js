@@ -26,7 +26,7 @@ export function MovingBorder({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2",
+        "bg-transparent w-fit relative text-xl p-[1px] overflow-hidden md:col-span-2",
         containerClassName
       )}
       style={{
