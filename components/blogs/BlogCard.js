@@ -1,27 +1,12 @@
-"use client";
-import { useInView, motion } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+
 import { FaCalendarMinus } from "react-icons/fa";
 import { IoTime } from "react-icons/io5";
 
 export default function BlogCard({ index, blog }) {
-  const viewRef = useRef();
-  const isInView = useInView(viewRef, { once: true });
   return (
-    <motion.div
+    <div
       className="w-full p-4 sm:p-6  border  rounded-[20px] border-project-card-border bg-project-card-background backdrop-blur-3xl"
-      key={index}
-      initial={{ opacity: 0, x: 250 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{
-        duration: 0.3,
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        delay: index * 0.1,
-      }}
-      ref={viewRef}
       style={{
         backgroundImage: `url('/gradient.svg')`,
       }}
@@ -75,6 +60,6 @@ export default function BlogCard({ index, blog }) {
       <div className="absolute top-0 h-fit -translate-y-1/3 mx-auto  right-0 w-2/4">
         <div className="bg-[rgba(0,166,255,0.27)]  dark:bg-[rgba(255,0,174,0.4)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
-    </motion.div>
+    </div>
   );
 }

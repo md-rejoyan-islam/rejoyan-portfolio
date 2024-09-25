@@ -25,9 +25,9 @@ export default function Move3D({ children }) {
     <div
       className="w-full  flex items-center justify-center  z-20  "
       style={{
-        // best perspective value
         perspective:
           "calc(100vw + 100vh + 100vmin + 100vmax + 100vmin + 100vmax)",
+        // perspective: "2000",
       }}
     >
       <motion.div

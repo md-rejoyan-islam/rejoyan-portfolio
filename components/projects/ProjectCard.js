@@ -2,8 +2,6 @@
 
 import { useInView, motion } from "framer-motion";
 import Image from "next/image";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import photo from "@/app/public/images/image.png";
 import { useRef } from "react";
 
 export default function ProjectCard({ index, project }) {

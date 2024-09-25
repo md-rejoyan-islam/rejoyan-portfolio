@@ -1,0 +1,26 @@
+"use client";
+
+import { useInView, motion } from "framer-motion";
+import { useRef } from "react";
+
+export default function ShowOneByOne({ children, index }) {
+  const viewRef = useRef();
+  const isInView = useInView(viewRef, { once: true });
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: 250 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{
+        duration: 0.3,
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: index * 0.1,
+      }}
+      ref={viewRef}
+    >
+      {children}
+    </motion.div>
+  );
+}

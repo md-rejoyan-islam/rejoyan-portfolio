@@ -34,7 +34,6 @@ export const PinContainer = ({
     >
       <div
         style={{
-          perspective: "1000px",
           transform: "rotateX(70deg) translateZ(0deg)",
         }}
         className="absolute  h-full left-1/2 w-full top-1/2 ml-[0.09375rem]  -translate-x-1/2 -translate-y-1/2"

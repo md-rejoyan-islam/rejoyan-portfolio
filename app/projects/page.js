@@ -5,156 +5,7 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 import { stagger, useAnimate, motion } from "framer-motion";
 import { useEffect } from "react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-
 export default function Projects() {
-  const projectss = [
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-    {
-      name: "Currencee",
-      description:
-        "An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium bespoke and ready-to-wear brand that provides high-quality yet affordable clothing.",
-      techStack: [
-        "Next Js",
-        "Tailwind CSS",
-        "Tanstack Query",
-        "Sanity CMS",
-        "Paystack",
-      ],
-      links: [
-        {
-          name: "Github",
-          href: "",
-          icon: <FaGithub className="text-button" />,
-        },
-        {
-          name: "Live",
-          href: "",
-          icon: <FaExternalLinkAlt className="text-button" />,
-        },
-      ],
-    },
-  ];
-
   const filters = [
     {
       name: "All",
@@ -171,7 +22,10 @@ export default function Projects() {
   ];
 
   const [scope, animate] = useAnimate();
-  const staggerList = stagger(0.1, { startDelay: 0 });
+  const staggerList = stagger(0.1, { startDelay: 0.6 });
+
+  const [scopeRef, projectAnimate] = useAnimate();
+  const projectStaggerList = stagger(0.2, { startDelay: 1.3 });
 
   useEffect(() => {
     animate(
@@ -184,19 +38,40 @@ export default function Projects() {
     );
   }, [staggerList, animate]);
 
+  useEffect(() => {
+    projectAnimate(
+      "section",
+      { opacity: 1, scale: 1, x: 0 },
+      {
+        duration: 0.2,
+        delay: projectStaggerList,
+      }
+    );
+  }, [projectStaggerList, projectAnimate]);
+
   return (
     <div className="pt-10 pb-12">
       <div>
-        <h1 className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]"
+        >
           Projects
-        </h1>
-        <p className="max-w-4xl text-center mx-auto text-[17px] sm:text-xl  text-text-primary leading-relaxed">
-          I&apos;ve worked on tons of little projects over the years but these
-          are the ones that I&apos;m most proud of. Many of them are
-          open-source, so if you see something that piques your interest, check
-          out the code and contribute if you have ideas on how it can be
-          improved.
-        </p>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="max-w-4xl text-center mx-auto text-[17px] sm:text-xl  text-text-primary leading-relaxed"
+        >
+          Over the years, I&apos;ve worked on a variety of projects that reflect
+          my passion for web development. Here are some of the ones I&apos;m
+          most proud of. Many of these are open-source, so feel free to explore
+          the code, and if something sparks your interest, you&apos;re welcome
+          to contribute or suggest improvements.
+        </motion.p>
       </div>
       <div className="py-11 ">
         <ul className="flex items-center gap-4" ref={scope}>
@@ -216,10 +91,24 @@ export default function Projects() {
           ))}
         </ul>
       </div>
-      <div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 items-center relative">
+      <div
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ delay: 1.4 }}
+      >
+        <motion.section
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 items-center relative"
+          ref={scopeRef}
+          transition={{ delay: 1.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           {projects?.map((project, index) => (
-            <div key={index} className="h-full">
+            <motion.section
+              key={index}
+              className="h-full"
+              style={{ opacity: 0, scale: 0.3, x: -50 }}
+            >
               <PinContainer
                 title={"adeweere"}
                 project={project}
@@ -227,9 +116,9 @@ export default function Projects() {
               >
                 <ProjectCard project={project} index={index} />
               </PinContainer>
-            </div>
+            </motion.section>
           ))}
-        </div>
+        </motion.section>
       </div>
     </div>
   );
