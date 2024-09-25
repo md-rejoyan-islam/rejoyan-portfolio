@@ -1,49 +1,6 @@
-import { FaServer } from "react-icons/fa";
-import { IoLogoFirebase, IoLogoNodejs, IoSearchSharp } from "react-icons/io5";
-import { RiNextjsFill } from "react-icons/ri";
-import { TfiServer } from "react-icons/tfi";
-import { MovingBorder } from "../animation/MovingBorder";
+import { services } from "@/data/services";
 
 export default function Services() {
-  const services = [
-    {
-      name: "Front-End",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <RiNextjsFill className="text-[65px] text-button " />,
-    },
-    {
-      name: "Backend-End",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <IoLogoNodejs className="text-[65px] text-button " />,
-    },
-    {
-      name: "Hosting",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <TfiServer className="text-[65px] text-button " />,
-    },
-    {
-      name: "Database Managment",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <FaServer className="text-[65px] text-button " />,
-    },
-    {
-      name: "Firebase",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <IoLogoFirebase className="text-[65px] text-button " />,
-    },
-    {
-      name: "SEO",
-      description:
-        "I can build a website from scratch using the latest technologies and frameworks.",
-      icon: <IoSearchSharp className="text-[65px] text-button " />,
-    },
-  ];
-
   return (
     <section className="py-10">
       <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
