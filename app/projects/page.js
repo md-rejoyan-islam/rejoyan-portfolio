@@ -3,25 +3,10 @@ import { PinContainer } from "@/components/animation/3d-pin";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
-import { projects as projectsData } from "@/data/projects";
+import { filterKeys, projects as projectsData } from "@/data/projects";
 import { stagger, useAnimate, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 export default function Projects() {
-  const filters = [
-    {
-      name: "All",
-    },
-    {
-      name: "Redux",
-    },
-    {
-      name: "Next.Js",
-    },
-    {
-      name: "Work",
-    },
-  ];
-
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0.6 });
 
@@ -79,7 +64,7 @@ export default function Projects() {
       </div>
       <div className="py-11 ">
         <ul className="flex items-center gap-4" ref={scope}>
-          {filters?.map((item, index) => (
+          {filterKeys?.map((item, index) => (
             <motion.li key={index} style={{ opacity: 0, scale: 0.3, x: -50 }}>
               <Button
                 size="small"

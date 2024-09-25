@@ -325,3 +325,18 @@ export const projects = [
     ],
   },
 ];
+
+export const filterKeys = [
+  {
+    name: "All",
+  },
+  {
+    name: "Redux",
+  },
+  {
+    name: "Next.Js",
+  },
+  {
+    name: "React",
+  },
+];
