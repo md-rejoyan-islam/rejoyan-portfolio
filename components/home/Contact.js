@@ -14,12 +14,12 @@ export default function Contact() {
           always open. Whether you have a question or just want to say hi, I’ll
           try my best to get back to you!
         </p>
-        <div className="grid grid-cols-7 gap-x-12 items-center">
+        <div className="grid lg:grid-cols-7 gap-x-12 items-center">
           <div className="py-4 col-span-5">
             <h3 className="py-2 text-xl font-semibold text-text-primary">
               Whats up?
             </h3>
-            <div className="grid grid-cols-2 gap-x-6 ">
+            <div className="grid sm:grid-cols-2 gap-x-6 ">
               <div className="">
                 <div className="py-2">
                   <label

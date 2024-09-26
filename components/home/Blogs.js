@@ -14,9 +14,9 @@ export default function Blogs() {
         </h2>
         <BlogButton />
       </div>
-      <div className="py-10 gap-y-12 gap-x-5 grid sm:grid-cols-2 lg:grid-cols-4">
+      <div className="py-10 gap-y-12 gap-x-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {blogs?.slice(0, 4).map((blog, index) => (
-          <ShowOneByOne key={index}>
+          <ShowOneByOne key={index} index={index}>
             <PinContainer
               title={"reerer"}
               project={<HomeBlogCard blog={blog} />}

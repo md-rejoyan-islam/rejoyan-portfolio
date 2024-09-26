@@ -10,7 +10,7 @@ export default function Services() {
       <div className="py-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {services?.map((service, index) => (
           <ShowOneByOne index={index} key={index}>
-            <div className="p-4  bg-[url('/gradient.svg')] bg-cover  overflow-hidden rounded-lg border border-project-card-border bg-project-card-bg-secondary  hover:scale-105 transition-all duration-500  backdrop-blur-3xl ">
+            <div className="p-4 h-full  bg-[url('/gradient.svg')] bg-cover  overflow-hidden rounded-lg border border-project-card-border bg-project-card-bg-secondary  hover:scale-105 transition-all duration-500  backdrop-blur-3xl ">
               <div>{service?.icon}</div>
               <div>
                 <h3 className="text-text-primary text-2xl font-semibold py-2">

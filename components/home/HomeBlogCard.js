@@ -1,13 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import photo from "@/app/public/images/image.png";
 
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
-export default function HomeBlogCard({ index, blog }) {
+export default function HomeBlogCard({ blog }) {
   return (
-    <div className="moving-card" key={index}>
+    <div className="moving-card">
       <div className="border border-project-card-border backdrop-blur-xl relative group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={photo}
