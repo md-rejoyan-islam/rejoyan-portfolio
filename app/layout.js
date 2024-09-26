@@ -25,12 +25,12 @@ export default function RootLayout({ children }) {
           themes={[
             "light",
             "dark",
-            "instagram",
-            "facebook",
-            "discord",
-            "netflix",
-            "twilight",
-            "reddit",
+            // "instagram",
+            // "facebook",
+            // "discord",
+            // "netflix",
+            // "twilight",
+            // "reddit",
           ]}
         >
           {/* <Navbar /> */}
