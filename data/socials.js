@@ -5,22 +5,22 @@ import { LuGithub, LuTwitter } from "react-icons/lu";
 export const socialLinks = [
   {
     name: "GitHub",
-    url: "mailto:",
+    url: "https://github.com/md-rejoyan-islam",
     icon: <LuGithub />,
   },
   {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/md-rejoyan-islam",
+    icon: <FiLinkedin />,
+  },
+  {
     name: "Instagram",
-    url: "https://www.instagram.com/bchiang7",
+    url: "https://www.instagram.com/md.rej0yan.islam",
     icon: <FaInstagram />,
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/bchiang7",
+    url: "https://x.com/md_rejoyanislam",
     icon: <LuTwitter />,
-  },
-  {
-    name: "Linkedin",
-    url: "https://www.linkedin.com/in/bchiang7",
-    icon: <FiLinkedin />,
   },
 ];

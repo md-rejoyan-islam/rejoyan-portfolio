@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { FaCalendarMinus } from "react-icons/fa";
 import { IoTime } from "react-icons/io5";
@@ -12,7 +13,7 @@ export default function BlogCard({ index, blog }) {
       }}
     >
       <article key={index}>
-        <a
+        <Link
           className="flex lg:flex-row flex-col lg:items-center items-start gap-8    group"
           href={blog?.link}
         >
@@ -55,7 +56,7 @@ export default function BlogCard({ index, blog }) {
               </div>
             </div>
           </div>
-        </a>
+        </Link>
       </article>
       <div className="absolute top-0 h-fit -translate-y-1/3 mx-auto  right-0 w-2/4">
         <div className="bg-[rgba(0,166,255,0.27)]  dark:bg-[rgba(255,0,174,0.4)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />

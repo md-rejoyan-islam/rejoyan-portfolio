@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaPhone } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -94,31 +95,28 @@ export default function Contact() {
               </p>
             </div>
             <div className="py-2">
-              <p className="text-text-secondary flex items-center gap-3">
-                {" "}
+              <Link
+                href={"tel:+8801568-816822"}
+                className="text-text-secondary flex items-center gap-3"
+              >
                 <span>
                   <FaPhone className="text-button text-lg" />
                 </span>{" "}
-                +880 123 456 7890
-              </p>
+                +8801568-816822
+              </Link>
             </div>
             <div className="py-2 ">
               <p className="text-text-secondary flex items-center gap-3 ">
                 <MdOutlineMailOutline className="text-button text-2xl" />
-                <a
-                  href="mailto:
-                    "
-                  className=""
-                >
-                  {" "}
-                  contact@yourdomain.com{" "}
-                </a>
+                <Link href="mailto:rejoyanislam0014@gmail.com" className="">
+                  rejoyanislam0014@gmail.com.com
+                </Link>
               </p>
             </div>
             <div className="py-2">
               <p className="text-text-secondary flex items-center gap-3">
                 <FaMapLocationDot className="text-button text-2xl" />
-                Address: 1234 Street Name, City Name, United States
+                Sylhet, Bangladesh
               </p>
             </div>
           </div>
