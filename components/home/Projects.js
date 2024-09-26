@@ -1,8 +1,8 @@
 import { ChevronsDown } from "lucide-react";
 import { ProjectButton } from "../projects/HomeButtons";
-import HomePorject from "./HomePorject";
 import { projects } from "@/data/projects";
 import ShowOneByOne from "../animation/ShowOneByOne";
+import HomeProject from "./HomeProject";
 
 export default function Projects() {
   return (
@@ -11,13 +11,14 @@ export default function Projects() {
         <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
           Projects
         </h2>
+
         <ProjectButton />
       </div>
       <div className="py-10 ">
         {projects?.splice(0, 4).map((project, index, array) => (
           <ShowOneByOne key={index}>
             <div className="mb-10">
-              <HomePorject
+              <HomeProject
                 title={project.title}
                 description={project.description}
                 image={project.image}

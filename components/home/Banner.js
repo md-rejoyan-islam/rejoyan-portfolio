@@ -12,8 +12,8 @@ import Link from "next/link";
 
 export default function Banner() {
   return (
-    <div className=" mt-16 mb-32 px-0 grid grid-cols-3">
-      <div className="col-span-2">
+    <div className=" my-16 px-0 grid grid-cols-1 lg:grid-cols-3">
+      <div className=" lg:col-span-2 order-2 lg:order-1">
         <h2 className="text-text-primary text-3xl font-semibold">
           Hi, I&apos;m{" "}
         </h2>
@@ -74,12 +74,12 @@ export default function Banner() {
         </div>
       </div>
 
-      <div className="w-full col-span-1 flex justify-center items-center relative">
-        <div className="absolute top-0 -left-40">
+      <div className=" w-0 lg:w-full  lg:col-span-1 order-1 lg:order-2 relative">
+        <div className="lg:absolute top-0 bottom-0 my-auto flex flex-col justify-center -left-40 overflow-hidden">
           <ShowLottieFile
             src={lootieAnimation}
             loop={true}
-            className={"w-[120%]"}
+            className={"max-w-[600px] mx-auto lg:w-[120%]"}
           />
         </div>
       </div>

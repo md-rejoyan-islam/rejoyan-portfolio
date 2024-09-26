@@ -1,7 +1,6 @@
 import Image from "next/image";
 import photo from "../../app/public/images/proj.png";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-export default function HomePorject({ direction, project }) {
+export default function HomeProject({ direction, project }) {
   return (
     <article className=" grid md:grid-cols-7  rounded-lg ">
       <section

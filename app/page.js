@@ -1,4 +1,4 @@
-import HomePorject from "@/components/home/HomePorject";
+import HomePorject from "@/components/home/HomeProject";
 import { TfiServer } from "react-icons/tfi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { ChevronsDown, ExternalLink } from "lucide-react";
