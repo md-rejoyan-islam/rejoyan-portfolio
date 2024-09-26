@@ -1,6 +1,7 @@
 "use client";
 import { socialLinks } from "@/data/socials";
 import { stagger, useAnimate, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Socials({ direction = "row", position = "relative" }) {
@@ -45,8 +46,9 @@ export default function Socials({ direction = "row", position = "relative" }) {
             key={index}
             style={{ opacity: 0, scale: 0.3, x: -50 }}
           >
-            <a
+            <Link
               href={social.url}
+              target="_blank"
               className="inline-flex items-center relative group text-button-text "
             >
               <div
@@ -67,7 +69,7 @@ export default function Socials({ direction = "row", position = "relative" }) {
               <div className="   absolute left-1/2 bottom-[-24px] opacity-0 group-hover:opacity-100 text-[12px] font-semibold transform -translate-x-1/2 transition-all duration-300 ease-in-out">
                 {social.name}
               </div>
-            </a>
+            </Link>
           </motion.li>
         ))}
       </ul>
