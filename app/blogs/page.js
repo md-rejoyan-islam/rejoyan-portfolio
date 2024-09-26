@@ -38,7 +38,7 @@ export default function Blogs() {
   }, [blogStaggerList, BlogAnimate]);
 
   return (
-    <div className="pt-10 pb-12">
+    <div className="pt-10 pb-12 px-3 sm:px-4">
       <div>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
