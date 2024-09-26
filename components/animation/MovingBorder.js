@@ -20,7 +20,6 @@ export function MovingBorder({
   className,
   width = 20,
   height = 20,
-
   ...otherProps
 }) {
   return (

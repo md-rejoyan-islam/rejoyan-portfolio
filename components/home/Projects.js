@@ -1,6 +1,8 @@
 import { ChevronsDown } from "lucide-react";
 import { ProjectButton } from "../projects/HomeButtons";
 import HomePorject from "./HomePorject";
+import { projects } from "@/data/projects";
+import ShowOneByOne from "../animation/ShowOneByOne";
 
 export default function Projects() {
   return (
@@ -12,15 +14,33 @@ export default function Projects() {
         <ProjectButton />
       </div>
       <div className="py-10 ">
-        <HomePorject direction="reverse" />
+        {projects?.splice(0, 4).map((project, index, array) => (
+          <ShowOneByOne key={index}>
+            <div className="mb-10">
+              <HomePorject
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                project={project}
+                direction={index % 2 === 0 ? "reverse" : ""}
+              />
+              <ChevronsDown
+                className={`${
+                  array.length - 1 <= index ? "hidden" : ""
+                } h-20 m-0 mx-auto w-20 my-8  animate-bounc  text-[#4b8fe2]`}
+              />
+            </div>
+          </ShowOneByOne>
+        ))}
+        {/* <HomePorject direction="reverse" /> */}
 
-        <ChevronsDown className="h-20 m-0 mx-auto w-20 my-8  animate-bounc  text-[#4b8fe2]" />
+        {/* <ChevronsDown className="h-20 m-0 mx-auto w-20 my-8  animate-bounc  text-[#4b8fe2]" />
 
         <HomePorject />
         <ChevronsDown className="h-20 m-0 mx-auto w-20 my-8  animate-bounc  text-[#4b8fe2]" />
         <HomePorject direction="reverse" />
         <ChevronsDown className="h-20 m-0 mx-auto w-20 my-8  animate-bounc  text-[#4b8fe2]" />
-        <HomePorject />
+        <HomePorject /> */}
       </div>
     </section>
   );

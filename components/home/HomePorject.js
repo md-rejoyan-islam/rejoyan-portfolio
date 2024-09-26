@@ -1,7 +1,7 @@
 import Image from "next/image";
 import photo from "../../app/public/images/proj.png";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-export default function HomePorject({ direction }) {
+export default function HomePorject({ direction, project }) {
   return (
     <article className=" grid md:grid-cols-7  rounded-lg ">
       <section
@@ -32,13 +32,11 @@ export default function HomePorject({ direction }) {
       >
         <div className="w-full block">
           <h3 className="font-semibold text-2xl   text-text-primary py-2  block w-full">
-            Halcyon Theme Atom
+            {project?.name}
           </h3>
 
           <p className=" rounded-md text-text-secondary backdrop-blur-md md:text-text-primary py-2 md:px-4 h-full md:bg-project-card-bg-secondary ">
-            A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
-            and more. Available on Visual Studio Marketplace, Package Control,
-            Atom Package Manager, and npm.
+            {project?.description}
           </p>
 
           <ul
@@ -46,32 +44,13 @@ export default function HomePorject({ direction }) {
               direction === "reverse" ? "md:justify-end" : "md:justify-start"
             } flex items-center gap-2.5 flex-wrap text-text-secondary py-2   `}
           >
-            <li>
-              <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
-                VS
-              </span>
-            </li>
-            <li>
-              <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
-                Code{" "}
-              </span>
-            </li>
-            <li>
-              <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
-                Sublime
-              </span>
-            </li>
-            <li>
-              {" "}
-              <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
-                Text{" "}
-              </span>
-            </li>
-            <li>
-              <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
-                Atom
-              </span>
-            </li>
+            {project?.techStack?.map((tech, index) => (
+              <li key={index}>
+                <span className="inline-block px-2.5 py-1 bg-button-bg text-button font-semibold  rounded-md text-[12px] ">
+                  {tech}
+                </span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -82,33 +61,17 @@ export default function HomePorject({ direction }) {
       >
         <div className=" h-full grid place-content-center ">
           <ul className="flex gap-2 items-center md:flex-col">
-            <li>
-              <a
-                href=""
-                className=" flex gap-2  border-button-bg text-button hover:bg-button-bg h-fit items-center text-sm rounded-md px-2 py-1.5 border"
-              >
-                <span className="md:hidden">GitHub</span>
-                <FaGithub />
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className=" flex gap-2  border-button-bg text-button hover:bg-button-bg h-fit items-center text-sm rounded-md px-2 py-1.5 border"
-              >
-                <span className="md:hidden">Preview</span>
-                <FaExternalLinkAlt />
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className=" flex gap-2  border-button-bg text-button hover:bg-button-bg h-fit items-center text-sm rounded-md px-2 py-1.5 border"
-              >
-                <span className="md:hidden">Preview</span>
-                <FaExternalLinkAlt />
-              </a>
-            </li>
+            {project?.links?.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link?.href}
+                  className=" flex gap-2  border-button-bg text-button hover:bg-button-bg h-fit items-center text-sm rounded-md px-2 py-1.5 border"
+                >
+                  <span className="md:hidden">{link?.name}</span>
+                  {link?.icon}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

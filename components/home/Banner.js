@@ -5,7 +5,7 @@ import { MdFileDownload } from "react-icons/md";
 import { TypeAnimation } from "react-type-animation";
 
 import ColorMovingButton from "../animation/ColorMovingButton";
-import ShowLottieFile from "./ShowLottieFile";
+import ShowLottieFile from "../ShowLottieFile";
 
 import lootieAnimation from "../../app/public/bannerAnimation.json";
 import Link from "next/link";
