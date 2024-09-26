@@ -5,6 +5,14 @@ import ThemeSwitch from "../theme/ThemeSwitch";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { animate, stagger, motion, useAnimate } from "framer-motion";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Navbar() {
   // mobile menu state
@@ -53,14 +61,11 @@ export default function Navbar() {
     },
   ];
 
-  // pathname
-  // const router = useRouter();
   const pathname = usePathname();
 
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0 });
 
-  // when page load li item show one by one with style
   useEffect(() => {
     animate(
       "li",
@@ -74,7 +79,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`text-text-secondary h-[70px] max-container mx-auto   px-4 `}
+      className={`text-text-secondary h-[70px] max-container mx-auto    px-4 `}
     >
       <div
         className="flex items-center justify-between  mx-auto h-full"
@@ -106,9 +111,41 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          <button className="md:hidden" onClick={handleMobileMenu}>
+          {/* <button className="md:hidden" onClick={handleMobileMenu}>
             <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
-          </button>
+          </button> */}
+
+          <Sheet className="md:hidden">
+            <SheetTrigger className="md:hidden">
+              <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
+            </SheetTrigger>
+            <SheetContent
+              className="z-[1000] md:hidden sm:max-w-[325px]  max-w-[50vw] min-w-[250px] bg-[#11082582] backdrop-blur-[3px] "
+              side={"left"}
+            >
+              <SheetHeader>
+                <SheetTitle></SheetTitle>
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
+
+              <nav className=" pt-6  w-full h-full  flex justify-center  ">
+                <ul
+                  className="flex md:hidden px-6 flex-col gap-12 items-center justify-start  "
+                  ref={mobileRef}
+                >
+                  {/* <li className="my-6 text-right w-full text-xl">
+                    <button onClick={handleMobileMenu}>X</button>
+                  </li> */}
+                  {links.map((link, index) => (
+                    <li className="hover:text-[#64ffda]" key={index}>
+                      <Link href={link.href}>{link.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </SheetContent>
+          </Sheet>
+
           {/* for small screens   */}
           {isMobileMenuOpen && (
             <nav
