@@ -1,7 +1,6 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa";
-import MagicButton from "../animation/MagicButton";
 import { useRouter } from "next/navigation";
 import ColorMovingButton from "../animation/ColorMovingButton";
 

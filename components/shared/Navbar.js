@@ -1,10 +1,10 @@
 "use client";
 import { RiMenu3Line } from "react-icons/ri";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeSwitch from "../theme/ThemeSwitch";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { animate, stagger, motion, useAnimate } from "framer-motion";
+import { stagger, motion, useAnimate } from "framer-motion";
 import {
   Sheet,
   SheetContent,
@@ -15,25 +15,6 @@ import {
 } from "@/components/ui/sheet";
 
 export default function Navbar() {
-  // mobile menu state
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const mobileRef = useRef(null);
-
-  // handle mobile menu
-  const handleMobileMenu = () => {
-    const data = document.querySelector(".index-module_type__E-SaG");
-    if (!isMobileMenuOpen) {
-      document.body.style.minHeight = "100vh";
-      document.body.style.overflow = "hidden";
-      // data.style.display = "none";
-    } else {
-      document.body.style.minHeight = "auto";
-      document.body.style.overflow = "auto";
-      // data.style.display = "block";
-    }
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const links = [
     {
       name: "Home",
@@ -54,10 +35,6 @@ export default function Navbar() {
     {
       name: "Contact",
       href: "/contact",
-    },
-    {
-      name: "Resume",
-      href: "/resume",
     },
   ];
 
@@ -113,10 +90,6 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          {/* <button className="md:hidden" onClick={handleMobileMenu}>
-            <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
-          </button> */}
-
           <Sheet onOpenChange={setOpenModal} open={openModal}>
             <SheetTrigger className="md:hidden">
               <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
@@ -131,10 +104,7 @@ export default function Navbar() {
               </SheetHeader>
 
               <nav className=" pt-6  w-full h-full  flex justify-center   ">
-                <ul
-                  className="flex md:hidden px-6 flex-col gap-12 items-center justify-start  "
-                  ref={mobileRef}
-                >
+                <ul className="flex md:hidden px-6 flex-col gap-12 items-center justify-start  ">
                   {links.map((link, index) => (
                     <li
                       className="hover:text-[#64ffda]"
@@ -150,31 +120,6 @@ export default function Navbar() {
               </nav>
             </SheetContent>
           </Sheet>
-
-          {/* for small screens   */}
-          {isMobileMenuOpen && (
-            <nav
-              className="absolute top-0 left-0 min-h-screen w-full bg-[#22c55e1e] z-[1000] flex justify-end  backdrop-blur-[3px] "
-              onClick={() => {
-                !mobileRef.current?.contains(event.target) &&
-                  handleMobileMenu();
-              }}
-            >
-              <ul
-                className="flex md:hidden px-6 flex-col gap-5 items-center justify-start w-[250px] bg-[#24223f]"
-                ref={mobileRef}
-              >
-                <li className="my-6 text-right w-full text-xl">
-                  <button onClick={handleMobileMenu}>X</button>
-                </li>
-                {links.map((link, index) => (
-                  <li className="hover:text-[#64ffda]" key={index}>
-                    <Link href={link.href}>{link.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
         </div>
         <ThemeSwitch />
       </div>

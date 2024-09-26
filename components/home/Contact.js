@@ -109,7 +109,7 @@ export default function Contact() {
               <p className="text-text-secondary flex items-center gap-3 ">
                 <MdOutlineMailOutline className="text-button text-2xl" />
                 <Link href="mailto:rejoyanislam0014@gmail.com" className="">
-                  rejoyanislam0014@gmail.com.com
+                  rejoyanislam0014@gmail.com
                 </Link>
               </p>
             </div>

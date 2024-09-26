@@ -1,10 +1,9 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { FiSun } from "react-icons/fi";
 import { useOnClickOutside } from "usehooks-ts";
-import MagicButton from "../animation/MagicButton";
 import ColorMovingButton from "../animation/ColorMovingButton";
 
 export default function ThemeSwitch() {

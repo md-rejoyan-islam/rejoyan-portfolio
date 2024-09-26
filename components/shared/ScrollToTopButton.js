@@ -8,7 +8,6 @@ import {
 } from "framer-motion";
 import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import { IoArrowUp, IoArrowUpCircle } from "react-icons/io5";
 
 export default function ScrollToTopButton() {
   const controls = useAnimation();

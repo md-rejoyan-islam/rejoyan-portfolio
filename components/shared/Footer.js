@@ -1,4 +1,3 @@
-import ScrollToTopButton from "./ScrollToTopButton";
 import Socials from "./Socials";
 
 export default function Footer() {
