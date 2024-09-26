@@ -1,31 +1,13 @@
 "use client";
 
-import { useInView, motion } from "framer-motion";
 import Image from "next/image";
 import photo from "@/app/public/images/image.png";
-import { useRef } from "react";
-import { ExternalLinkIcon } from "lucide-react";
+
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
-export default function HomeBlogCard({ index }) {
-  const viewRef = useRef();
-  const isInView = useInView(viewRef, { once: true });
-
+export default function HomeBlogCard({ index, blog }) {
   return (
-    <motion.div
-      className="moving-card"
-      key={index}
-      initial={{ opacity: 0, x: 150 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{
-        duration: 0.3,
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        delay: index * 0.1,
-      }}
-      ref={viewRef}
-    >
+    <div className="moving-card" key={index}>
       <div className="border border-project-card-border backdrop-blur-xl relative group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={photo}
@@ -38,12 +20,11 @@ export default function HomeBlogCard({ index }) {
           style={{ color: "transparent" }}
         />
         <div className="pt-3">
-          <h2 className="text-xl font-medium tracking-wide mb-1">Currencee</h2>
+          <h2 className="text-xl font-medium tracking-wide mb-1">
+            {blog?.title}
+          </h2>
           <div className="text-sm dark:text-zinc-400 text-zinc-600">
-            An ecommerce store for Lavidluxe clothings. Lavidluxe is a premium
-            bespoke and ready-to-wear brand that provides high-quality yet
-            affordable female and male wears, hoodies and joggers co-ord sets,
-            luxury handmade unisex footwear and bags.
+            {blog?.description}
           </div>
         </div>
         <div className="flex items-center gap-x-4 mt-3 text-sm">
@@ -96,6 +77,6 @@ export default function HomeBlogCard({ index }) {
       <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
         <div className="bg-[rgba(0,255,145,0.46)]  dark:bg-[rgba(255,0,234,0.66)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
-    </motion.div>
+    </div>
   );
 }

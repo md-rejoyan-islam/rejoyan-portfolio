@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import ProjectCard from "../projects/ProjectCard";
 
 export const PinContainer = ({
   children,
@@ -60,9 +59,9 @@ export const PinPerspective = ({ links, project }) => {
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="invisible w-[100%] overflow-hidden">
           {/* project card added here for take width and height */}
-          <ProjectCard project={project} />
+          {project}
         </div>
-        <div className="absolute top-10 inset-x-0 flex justify-center   ">
+        <div className="absolute top-3 inset-x-0 flex justify-center   ">
           <ul className="flex justify-center  gap-2 z-10">
             {links?.map((link, index) => (
               <Link

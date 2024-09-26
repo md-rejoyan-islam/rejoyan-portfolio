@@ -2,6 +2,8 @@ import { ExternalLink } from "lucide-react";
 import { PinContainer } from "../animation/3d-pin";
 import { BlogButton } from "../projects/HomeButtons";
 import HomeBlogCard from "./HomeBlogCard";
+import { blogs } from "@/data/blogs";
+import ShowOneByOne from "../animation/ShowOneByOne";
 
 export default function Blogs() {
   return (
@@ -12,42 +14,24 @@ export default function Blogs() {
         </h2>
         <BlogButton />
       </div>
-      <div className="py-4 gap-8 grid sm:grid-cols-2 lg:grid-cols-3 ">
-        <PinContainer
-          title={"reerer"}
-          links={[
-            {
-              title: "View",
-              href: "/blogs",
-              icon: <ExternalLink className="text-button w-4 h-4" />,
-            },
-          ]}
-        >
-          <HomeBlogCard />
-        </PinContainer>
-        <PinContainer
-          title={"reerer"}
-          links={[
-            {
-              title: "View",
-              href: "/blogs",
-              icon: <ExternalLink className="text-button w-4 h-4" />,
-            },
-          ]}
-        >
-          <HomeBlogCard />
-        </PinContainer>
-        <PinContainer
-          links={[
-            {
-              title: "View",
-              href: "/blogs",
-              icon: <ExternalLink className="text-button w-4 h-4" />,
-            },
-          ]}
-        >
-          <HomeBlogCard />
-        </PinContainer>
+      <div className="py-10 gap-y-12 gap-x-5 grid sm:grid-cols-2 lg:grid-cols-4">
+        {blogs?.slice(0, 4).map((blog, index) => (
+          <ShowOneByOne key={index}>
+            <PinContainer
+              title={"reerer"}
+              project={<HomeBlogCard blog={blog} />}
+              links={[
+                {
+                  title: "View",
+                  href: "/blogs",
+                  icon: <ExternalLink className="text-button w-4 h-4" />,
+                },
+              ]}
+            >
+              <HomeBlogCard blog={blog} />
+            </PinContainer>
+          </ShowOneByOne>
+        ))}
       </div>
     </section>
   );

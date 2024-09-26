@@ -114,7 +114,7 @@ export default function Projects() {
                 <ShowOneByOne index={index}>
                   <PinContainer
                     title={"adeweere"}
-                    project={project}
+                    project={<ProjectCard project={project} index={index} />}
                     links={project?.links}
                   >
                     <ProjectCard project={project} index={index} />
