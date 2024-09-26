@@ -35,7 +35,7 @@ export default function ThemeSwitch() {
     <div ref={ref} className="relative inline-block text-left">
       <ColorMovingButton>
         <button
-          className="bg-background-secondary hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
+          className="bg-background-secondary  hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
           onClick={toggleDropdown}
         >
           <span>Theme</span>

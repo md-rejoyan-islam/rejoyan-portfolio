@@ -66,6 +66,8 @@ export default function Navbar() {
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 0 });
 
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     animate(
       "li",
@@ -115,12 +117,12 @@ export default function Navbar() {
             <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
           </button> */}
 
-          <Sheet className="md:hidden">
+          <Sheet onOpenChange={setOpenModal} open={openModal}>
             <SheetTrigger className="md:hidden">
               <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
             </SheetTrigger>
             <SheetContent
-              className="z-[1000] md:hidden sm:max-w-[325px]  max-w-[50vw] min-w-[250px] bg-[#11082582] backdrop-blur-[3px] "
+              className="z-[1000] border-project-card-bg-secondary text-secondary dark:text-text-secondary md:hidden sm:max-w-[325px]  max-w-[50vw] min-w-[250px] bg-[#11082582]  backdrop-blur-[3px] "
               side={"left"}
             >
               <SheetHeader>
@@ -128,16 +130,19 @@ export default function Navbar() {
                 <SheetDescription></SheetDescription>
               </SheetHeader>
 
-              <nav className=" pt-6  w-full h-full  flex justify-center  ">
+              <nav className=" pt-6  w-full h-full  flex justify-center   ">
                 <ul
                   className="flex md:hidden px-6 flex-col gap-12 items-center justify-start  "
                   ref={mobileRef}
                 >
-                  {/* <li className="my-6 text-right w-full text-xl">
-                    <button onClick={handleMobileMenu}>X</button>
-                  </li> */}
                   {links.map((link, index) => (
-                    <li className="hover:text-[#64ffda]" key={index}>
+                    <li
+                      className="hover:text-[#64ffda]"
+                      key={index}
+                      onClick={() => {
+                        setOpenModal(false);
+                      }}
+                    >
                       <Link href={link.href}>{link.name}</Link>
                     </li>
                   ))}
