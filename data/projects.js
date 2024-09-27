@@ -27,7 +27,7 @@ export const projects = [
     ],
   },
   {
-    name: "POSITIVUS - A Digital Marketing Agency Page",
+    name: "POSITIVUS - Digital Marketing Agency",
     description:
       "Positivus helps businesses grow online with SEO, PPC, social media marketing, and content creation, showcasing success through detailed case studies.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
@@ -51,7 +51,7 @@ export const projects = [
     ],
   },
   {
-    name: "Bizpro - A Business-Promotion-Solution-Landing-Page",
+    name: "Bizpro - Business Promotion Solution",
     description:
       "BizPro helps businesses promote their brand online with tailored packages, secure strategies, expert support, and effective communication tools.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
