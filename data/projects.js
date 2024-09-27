@@ -7,7 +7,7 @@ export const projects = [
     description:
       "Trafalgar offers affordable, progressive healthcare solutions accessible online and on mobile, tailored to individual health needs with top doctors.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
-    banner: "/image/projects/trafalfar.png",
+    banner: "/image/projects/trafalgar.png",
     links: [
       {
         name: "GitHub",
@@ -31,7 +31,7 @@ export const projects = [
     description:
       "Positivus helps businesses grow online with SEO, PPC, social media marketing, and content creation, showcasing success through detailed case studies.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
-    banner: "/image/projects/trafalfar.png",
+    banner: "/image/projects/positivus.png",
     links: [
       {
         name: "GitHub",
@@ -55,7 +55,7 @@ export const projects = [
     description:
       "BizPro helps businesses promote their brand online with tailored packages, secure strategies, expert support, and effective communication tools.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
-    banner: "/image/projects/trafalfar.png",
+    banner: "/image/projects/bizpro.png",
     links: [
       {
         name: "GitHub",
@@ -79,7 +79,7 @@ export const projects = [
     description:
       "Delicious Food offers high-quality, tasty burgers with premium ingredients, top-notch services, and a streamlined order and delivery process.",
     techStack: ["HTML", "CSS", "Javascript"],
-    banner: "/image/projects/trafalfar.png",
+    banner: "/image/projects/taste.png",
     links: [
       {
         name: "GitHub",
