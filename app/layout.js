@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
         >
           {/* <Navbar /> */}
           <StickyNav />
+          
           <main className="mx-auto max-container  px-4">{children}</main>
           <Socials direction="col" position="fixed" />
           <ScrollToTopButton />
