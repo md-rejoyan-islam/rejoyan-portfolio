@@ -5,7 +5,7 @@ export const projects = [
   {
     name: "TRAFALGAR - Online Medical Service",
     description:
-      "Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone . I have clone the website from a figma file.",
+      "Trafalgar offers affordable, progressive healthcare solutions accessible online and on mobile, tailored to individual health needs with top doctors.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/trafalfar.png",
     links: [
@@ -29,7 +29,7 @@ export const projects = [
   {
     name: "POSITIVUS - A Digital Marketing Agency Page",
     description:
-      "This landing page is about a digital marketing agency page. They build their website for their business promotion and growing perpose.I have clone the website from a figma file.",
+      "Positivus helps businesses grow online with SEO, PPC, social media marketing, and content creation, showcasing success through detailed case studies.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/trafalfar.png",
     links: [
@@ -53,7 +53,7 @@ export const projects = [
   {
     name: "Bizpro - A Business-Promotion-Solution-Landing-Page",
     description:
-      "This project is build using HTML:5, CSS:3, JavaScript. This ia a business promotion solution landing page. This project is clone from a figma file to HTML.",
+      "BizPro helps businesses promote their brand online with tailored packages, secure strategies, expert support, and effective communication tools.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/trafalfar.png",
     links: [
@@ -77,7 +77,7 @@ export const projects = [
   {
     name: "Tasty Food 🍔🍕🍣",
     description:
-      "Welcome to the Absolutely Tasty Food project! This web application allows users to explore a variety of delicious food items, add them to their cart, and place orders. The project is built using HTML5, CSS3, and JavaScript.",
+      "Delicious Food offers high-quality, tasty burgers with premium ingredients, top-notch services, and a streamlined order and delivery process.",
     techStack: ["HTML", "CSS", "Javascript"],
     banner: "/image/projects/trafalfar.png",
     links: [
