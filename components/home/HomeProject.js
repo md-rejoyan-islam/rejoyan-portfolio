@@ -16,7 +16,7 @@ export default function HomeProject({ direction, project }) {
           <Image
             width={500}
             h={400}
-            src={photo}
+            src={project?.banner || photo}
             alt="Alt "
             className="w-full h-full rounded-xl "
           />

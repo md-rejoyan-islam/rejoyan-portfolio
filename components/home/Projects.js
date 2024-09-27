@@ -21,7 +21,7 @@ export default function Projects() {
               <HomeProject
                 title={project.title}
                 description={project.description}
-                image={project.image}
+                image={project.banner}
                 project={project}
                 direction={index % 2 === 0 ? "reverse" : ""}
               />
