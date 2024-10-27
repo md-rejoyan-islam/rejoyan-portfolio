@@ -48,12 +48,13 @@ export default function ServiceCard({ index, key, service }) {
         </div>
       </div>
       <div
-        className="absolute  h-4/5 w-4/5 bg-[linear-gradient(180deg,_#ee6eff,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] dark:bg-[linear-gradient(180deg,_#ee6eff30,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)]  opacity-0 blur-[70px] duration-150 group-hover:opacity-90"
+        className="absolute  h-4/5 w-4/5 bg-[linear-gradient(180deg,_#ee6eff,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] dark:bg-[linear-gradient(180deg,_#ee6eff30,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)]  opacity-0 blur-[70px]  group-hover:opacity-90"
         style={{
           transform: "translate(-50%, -50%)",
           top: `${position.y}px`,
           left: `${position.x}px`,
         }}
+        animate={controls}
       />
       <div className="absolute inset-[1px] -z-10 rounded-xl bg-project-card-bg-secondary " />
     </div>
