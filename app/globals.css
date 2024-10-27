@@ -101,7 +101,7 @@ html {
   :root {
     --project-card-text: #222;
     --project-card-background: #fcfcfc;
-    --project-card-bg-secondary: #d1d2d41a;
+    --project-card-bg-secondary: #f9fdfa;
     --project-card-border: #a7e0f5;
     --background-secondary: #fff;
     --moving-border: #223eac;
@@ -151,7 +151,7 @@ html {
   .dark {
     --project-card-text: #fff;
     --project-card-background: #0c1327;
-    --project-card-bg-secondary: #287a7a3a;
+    --project-card-bg-secondary: #071124;
     --project-card-border: #312f55;
     --moving-border: #3badff;
     --button: #00c7ff;
