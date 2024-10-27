@@ -1,19 +1,16 @@
 "use client";
-import { useAnimation } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function ServiceCard({ index, key, service }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const controls = useAnimation();
 
-  const handleMouseMove = (event, index) => {
+  const handleMouseMove = (event) => {
     const liElement = event.currentTarget;
     const rect = liElement.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
     setPosition({ x, y });
-    controls.start({ x, y });
   };
 
   return (
@@ -54,9 +51,8 @@ export default function ServiceCard({ index, key, service }) {
           top: `${position.y}px`,
           left: `${position.x}px`,
         }}
-        animate={controls}
       />
-      <div className="absolute inset-[1px] -z-10 rounded-xl bg-project-card-bg-secondary " />
+      <div className="absolute inset-[1.5px] -z-10 rounded-xl bg-project-card-bg-secondary " />
     </div>
   );
 }
