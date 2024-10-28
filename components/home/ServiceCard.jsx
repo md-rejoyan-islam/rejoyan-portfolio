@@ -18,7 +18,7 @@ export default function ServiceCard({ index, key, service }) {
       className={`group relative z-0  h-full      overflow-hidden rounded-xl border border-project-card-border    transition-all duration-500 backdrop-blur-3xl `}
       style={{
         background: position.x
-          ? `radial-gradient(400px circle at ${position.x}px ${position.y}px, #ee6eff, transparent, transparent 70%)`
+          ? `radial-gradient(500px circle at ${position.x}px ${position.y}px, #ee6eff, transparent, transparent 70%)`
           : "",
       }}
       onMouseMove={(event) => handleMouseMove(event, index)}

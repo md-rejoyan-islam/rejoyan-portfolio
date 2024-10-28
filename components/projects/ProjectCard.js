@@ -1,8 +1,10 @@
 "use client";
+
 import Image from "next/image";
+
 export default function ProjectCard({ project }) {
   return (
-    <div className="moving-card">
+    <div className="moving-car">
       <div className=" backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={project?.banner}

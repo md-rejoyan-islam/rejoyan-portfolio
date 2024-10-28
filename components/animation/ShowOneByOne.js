@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView, motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function ShowOneByOne({ children, index }) {
@@ -19,6 +19,7 @@ export default function ShowOneByOne({ children, index }) {
         delay: index * 0.1,
       }}
       ref={viewRef}
+      className="w-full"
     >
       {children}
     </motion.div>

@@ -1,10 +1,10 @@
 "use client";
-import { PinContainer } from "@/components/animation/3d-pin";
+import ThreeDPin from "@/components/animation/3d-pin";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
 import { filterKeys, projects as projectsData } from "@/data/projects";
-import { stagger, useAnimate, motion } from "framer-motion";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
 export default function Projects() {
   const [scope, animate] = useAnimate();
@@ -98,7 +98,7 @@ export default function Projects() {
       </div>
       <div>
         <motion.section
-          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16 items-center relative"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16  relative"
           ref={scopeRef}
           transition={{ delay: 1.3 }}
           initial={{ opacity: 0 }}
@@ -112,13 +112,13 @@ export default function Projects() {
                 style={{ opacity: 0, scale: 0.3, x: -50 }}
               >
                 <ShowOneByOne index={index}>
-                  <PinContainer
+                  <ThreeDPin
                     title={"adeweere"}
                     project={<ProjectCard project={project} index={index} />}
                     links={project?.links}
                   >
                     <ProjectCard project={project} index={index} />
-                  </PinContainer>
+                  </ThreeDPin>
                 </ShowOneByOne>
               </motion.article>
             ))

@@ -1,10 +1,8 @@
 "use client";
-import Move3D from "@/components/animation/3d-move";
-import { MovingBorder } from "@/components/animation/MovingBorder";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import BlogCard from "@/components/blogs/BlogCard";
 import { blogs, blogSites } from "@/data/blogs";
-import { stagger, useAnimate, motion } from "framer-motion";
+import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -82,7 +80,7 @@ export default function Blogs() {
       </div>
 
       <motion.section
-        className="flex flex-col  max-w-full lg:gap-y-12 gap-y-12 mb-12 box-border"
+        className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-4  max-w-full lg:gap-y-12 gap-y-12 mb-12 box-border"
         ref={blogScope}
         transition={{ delay: 1.3 }}
         initial={{ opacity: 0 }}
@@ -94,18 +92,7 @@ export default function Blogs() {
             style={{ opacity: 0, scale: 0.3, x: -50 }}
           >
             <ShowOneByOne index={index}>
-              <Move3D>
-                <MovingBorder
-                  duration={Math.floor(Math.random() * 10000) + 10000}
-                  borderRadius="20px"
-                  width={60}
-                  height={60}
-                  borderClassName={"h-60 w-60"}
-                  key={index}
-                >
-                  <BlogCard blog={blog} index={index} />
-                </MovingBorder>
-              </Move3D>
+              <BlogCard blog={blog} index={index} />
             </ShowOneByOne>
           </motion.article>
         ))}
