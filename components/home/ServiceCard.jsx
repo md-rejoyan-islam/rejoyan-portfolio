@@ -40,7 +40,7 @@ export default function ServiceCard({ index, service }) {
             height={1358}
             decoding="async"
             data-nimg={1}
-            className="absolute inset-0 -z-10 h-full w-full object-cover  opacity-0 hover:opacity-100  group-hover:opacity-100 duration-150"
+            className="absolute inset-0 -z-10 h-full w-full object-cover  opacity-70 hover:opacity-100  group-hover:opacity-100 duration-150"
             src="/bg-pattern.webp"
           />
         </div>

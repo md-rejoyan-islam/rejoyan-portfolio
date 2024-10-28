@@ -1,11 +1,25 @@
+"use client";
 import { blogs } from "@/data/blogs";
-import { ExternalLink } from "lucide-react";
-import ThreeDPin from "../animation/3d-pin";
+import { motion, stagger, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 import ShowOneByOne from "../animation/ShowOneByOne";
+import BlogCard from "../blogs/BlogCard";
 import { BlogButton } from "../projects/HomeButtons";
-import HomeBlogCard from "./HomeBlogCard";
 
 export default function Blogs() {
+  const [blogScope, BlogAnimate] = useAnimate();
+
+  const blogStaggerList = stagger(0.2, { startDelay: 1.3 });
+  useEffect(() => {
+    BlogAnimate(
+      "article",
+      { opacity: 1, scale: 1, x: 0 },
+      {
+        duration: 0.2,
+        delay: blogStaggerList,
+      }
+    );
+  }, [blogStaggerList, BlogAnimate]);
   return (
     <section className="py-10">
       <div className="flex justify-between items-center gap-12">
@@ -14,25 +28,24 @@ export default function Blogs() {
         </h2>
         <BlogButton />
       </div>
-      <div className="py-10 gap-y-12 gap-x-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {blogs?.slice(0, 4).map((blog, index) => (
-          <ShowOneByOne key={index} index={index}>
-            <ThreeDPin
-              title={"reerer"}
-              project={<HomeBlogCard blog={blog} />}
-              links={[
-                {
-                  title: "View",
-                  href: "/blogs",
-                  icon: <ExternalLink className="text-button w-4 h-4" />,
-                },
-              ]}
-            >
-              <HomeBlogCard blog={blog} />
-            </ThreeDPin>
-          </ShowOneByOne>
+      <motion.div
+        className="py-10 gap-y-12 gap-x-7 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
+        ref={blogScope}
+        transition={{ delay: 1.3 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {blogs?.slice(0, 3).map((blog, index) => (
+          <motion.article
+            key={index}
+            style={{ opacity: 0, scale: 0.3, x: -50 }}
+          >
+            <ShowOneByOne index={index}>
+              <BlogCard blog={blog} index={index} />
+            </ShowOneByOne>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { BackgroundGradient } from "../ui/background-gradient";
 import photo from "./../../app/public/images/rejoyan.jpeg";
 
 export default function About() {
@@ -32,16 +34,19 @@ export default function About() {
             </div>
           </div>
           <div className="flex-1  lg:col-span-2 px-6 max-w-[400px]">
-            <figure className="relative" id="imgFigure">
-              <Image
-                src={photo}
-                alt="Md. Rejoyan Islam"
-                height={"400"}
-                width={"400"}
-                className=" rounded-md  mix-blend-multiple -translate-x-3 -translate-y-3  "
-              />
-              <div className="w-full h-full absolute top-0 rounded-md  border-red-400 border-2 -z-10 "></div>
-            </figure>
+            <BackgroundGradient className="rounded-[22px] p-1">
+              {" "}
+              <figure className="relative" id="imgFigur">
+                <Image
+                  src={photo}
+                  alt="Md. Rejoyan Islam"
+                  height={"400"}
+                  width={"400"}
+                  className="   mix-blend-multiple  rounded-[22px]"
+                />
+                {/* <div className="w-full h-full absolute top-0 rounded-md  border-red-400 border-2 -z-10 "></div> */}
+              </figure>
+            </BackgroundGradient>
           </div>
         </div>
       </div>

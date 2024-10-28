@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function SkillCard({ data }) {
   return (
     <div
-      className="flex relative bg-cover cursor-pointer border border-project-card-border flex-col justify-between project-card rounded-md bg-project-card-bg-secondary  overflow-hidden hover:-translate-y-2 w-40  h-32 transition:translate duration-300 m-3"
+      className="flex relative bg-cover cursor-pointer border border-project-card-border flex-col justify-between project-card rounded-md bg-[project-card-bg-secondary] bg-[rgba(255, 255, 255, 0.05)]  overflow-hidden hover:-translate-y-2 w-40  h-32 transition:translate duration-300 m-3"
       style={{
         backgroundImage: `url('/gradient.svg')`,
       }}

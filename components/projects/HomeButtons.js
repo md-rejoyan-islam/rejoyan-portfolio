@@ -1,8 +1,8 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import ColorMovingButton from "../animation/ColorMovingButton";
+import { FaLocationArrow } from "react-icons/fa";
+import AnimatedButton from "../animation/AnimatedButton";
 
 export function ProjectButton() {
   const router = useRouter();
@@ -11,15 +11,12 @@ export function ProjectButton() {
   };
 
   return (
-    <ColorMovingButton>
-      <button
-        className="bg-background-secondary hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
-        onClick={handleClick}
-      >
-        <span>All Projects</span>
-        <FaLocationArrow />
-      </button>
-    </ColorMovingButton>
+    <div onClick={handleClick}>
+      <AnimatedButton
+        title={"All Projects"}
+        icon={<FaLocationArrow />}
+      ></AnimatedButton>
+    </div>
   );
 }
 
@@ -30,14 +27,11 @@ export function BlogButton() {
   };
 
   return (
-    <ColorMovingButton>
-      <button
-        className="bg-background-secondary hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
-        onClick={handleClick}
-      >
-        <span>All Blogs</span>
-        <FaLocationArrow />
-      </button>
-    </ColorMovingButton>
+    <div onClick={handleClick}>
+      <AnimatedButton
+        title={"All Blogs"}
+        icon={<FaLocationArrow />}
+      ></AnimatedButton>
+    </div>
   );
 }
