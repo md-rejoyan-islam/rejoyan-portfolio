@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { RiNextjsFill } from "react-icons/ri";
 
 export default function SkillCard({ data }) {
   return (
@@ -16,7 +15,7 @@ export default function SkillCard({ data }) {
       </div>
       <div className="  flex-1 flex items-center  justify-center mx-auto flex-col">
         <Image
-          src={data.icon}
+          src={data?.icon || "/icons/nextjs.svg"}
           alt={data.name}
           width={55}
           height={55}

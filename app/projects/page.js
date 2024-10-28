@@ -3,6 +3,7 @@ import ThreeDPin from "@/components/animation/3d-pin";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
+import { Spotlight } from "@/components/ui/spotlight";
 import { filterKeys, projects as projectsData } from "@/data/projects";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -39,7 +40,11 @@ export default function Projects() {
   }, [projectStaggerList, projectAnimate]);
 
   return (
-    <div className="pt-10 pb-12">
+    <div className="pt-10 pb-12 px-3 sm:px-4 relative">
+      <Spotlight
+        className="top-40 left-0 md:left-60 md:top-20 z-50  "
+        fill="rgba(255, 182, 193, 0.60)"
+      />
       <div>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -47,7 +52,13 @@ export default function Projects() {
           transition={{ duration: 0.4 }}
           className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]"
         >
-          Projects
+          <span>Projects</span>
+          <div className="relative">
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/4 blur-sm" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/4" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          </div>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: -20 }}

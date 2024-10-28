@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
+import { LinkPreview } from "./link-preview";
 
 export const PinContainer = ({
   children,
@@ -68,14 +68,13 @@ export const PinPerspective = ({ links, project }) => {
         <div className="invisible">{project}</div>
         <div className="absolute top-0 inset-x-0  flex justify-center gap-3">
           {links?.map((link, index) => (
-            <Link
-              href={link?.href || "#"}
-              target={"_blank"}
+            <LinkPreview
+              url={link?.href || "https://ui.aceternity.com"}
               className="relative cursor-pointer flex space-x-2 items-center hover:bg-project-card-bg-secondary border-project-card-border border rounded-md py-1.5 px-2.5 ring-1"
               key={index}
             >
               {link?.icon}
-            </Link>
+            </LinkPreview>
           ))}
         </div>
 

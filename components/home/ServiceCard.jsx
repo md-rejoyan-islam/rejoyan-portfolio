@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { Meteors } from "../ui/meteors";
 
-export default function ServiceCard({ index, key, service }) {
+export default function ServiceCard({ index, service }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event) => {
@@ -52,7 +53,8 @@ export default function ServiceCard({ index, key, service }) {
           left: `${position.x}px`,
         }}
       />
-      <div className="absolute inset-[1.5px] -z-10 rounded-xl bg-project-card-bg-secondary " />
+      <div className="absolute inset-[1.5px] -z-10 rounded-xl bg-project-card-bg-secondary   " />
+      <Meteors number={20} />
     </div>
   );
 }

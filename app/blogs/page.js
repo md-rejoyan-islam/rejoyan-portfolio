@@ -1,6 +1,7 @@
 "use client";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import BlogCard from "@/components/blogs/BlogCard";
+import { Spotlight } from "@/components/ui/spotlight";
 import { blogs, blogSites } from "@/data/blogs";
 import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
@@ -36,7 +37,12 @@ export default function Blogs() {
   }, [blogStaggerList, BlogAnimate]);
 
   return (
-    <div className="pt-10 pb-12 px-3 sm:px-4">
+    <div className="pt-10 pb-12 px-3 sm:px-4 relative">
+      <Spotlight
+        className="top-40 left-0 md:left-60 md:top-20 z-50  "
+        fill="rgba(255, 182, 193, 0.60)"
+      />
+
       <div>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -44,8 +50,15 @@ export default function Blogs() {
           transition={{ duration: 0.4 }}
           className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]"
         >
-          Blog
+          <span>Blog</span>
+          <div className="relative">
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/4 blur-sm" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/4" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          </div>
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +93,7 @@ export default function Blogs() {
       </div>
 
       <motion.section
-        className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-4  max-w-full lg:gap-y-12 gap-y-12 mb-12 box-border"
+        className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-8 lg:gap-x-10  max-w-full lg:gap-y-12 gap-y-10 mb-12 box-border"
         ref={blogScope}
         transition={{ delay: 1.3 }}
         initial={{ opacity: 0 }}

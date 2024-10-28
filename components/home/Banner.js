@@ -2,15 +2,21 @@
 
 import { FaUserNinja } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
-import { TypeAnimation } from "react-type-animation";
 
 import ColorMovingButton from "../animation/ColorMovingButton";
 import ShowLottieFile from "../ShowLottieFile";
 
-import lootieAnimation from "../../app/public/bannerAnimation.json";
 import Link from "next/link";
+import lootieAnimation from "../../app/public/bannerAnimation.json";
+import { BackgroundLines } from "../ui/background-lines";
+import { FlipWords } from "../ui/flip-words";
 
 export default function Banner() {
+  const words = [
+    "MERN Stack Developer",
+    "Full Stack Developer",
+    "Next.Js Expert",
+  ];
   return (
     <div className=" my-16 px-0 grid grid-cols-1 lg:grid-cols-3">
       <div className=" lg:col-span-2 order-2 lg:order-1">
@@ -25,7 +31,15 @@ export default function Banner() {
         </h2>
 
         {/* type data  */}
-        <TypeAnimation
+        <div className="overflow-hidden">
+          <FlipWords
+            words={words}
+            className={
+              "bg-clip-text inline-block overflow-hidden text-wrap text-[3em] text-transparent bg-gradient-to-r from-[#4d1cb8] via-[#12e435] to-[#b72a77]"
+            }
+          />
+        </div>
+        {/* <TypeAnimation
           sequence={[
             // Same substring at the start will only be typed out once, initially
             "MERN Stack Developer",
@@ -37,7 +51,7 @@ export default function Banner() {
           speed={50}
           className="bg-clip-text inline-block text-[3em] text-transparent bg-gradient-to-r from-[#4d1cb8] via-[#12e435] to-[#b72a77]"
           repeat={Infinity}
-        />
+        /> */}
         {/* type data  */}
         <h2 className="  text-[3em] font-semibold ">
           <span className="text-text-secondary">
@@ -76,11 +90,13 @@ export default function Banner() {
 
       <div className=" w-0 lg:w-full  lg:col-span-1 order-1 lg:order-2 relative">
         <div className="lg:absolute top-0 bottom-0 my-auto flex flex-col justify-center -left-40 overflow-hidden">
-          <ShowLottieFile
-            src={lootieAnimation}
-            loop={true}
-            className={"max-w-[600px] mx-auto lg:w-[120%]"}
-          />
+          <BackgroundLines>
+            <ShowLottieFile
+              src={lootieAnimation}
+              loop={true}
+              className={"max-w-[600px] mx-auto lg:w-[120%]"}
+            />
+          </BackgroundLines>
         </div>
       </div>
     </div>
