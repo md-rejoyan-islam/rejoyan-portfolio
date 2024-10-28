@@ -1,9 +1,9 @@
+import { blogs } from "@/data/blogs";
 import { ExternalLink } from "lucide-react";
-import { PinContainer } from "../animation/3d-pin";
+import ThreeDPin from "../animation/3d-pin";
+import ShowOneByOne from "../animation/ShowOneByOne";
 import { BlogButton } from "../projects/HomeButtons";
 import HomeBlogCard from "./HomeBlogCard";
-import { blogs } from "@/data/blogs";
-import ShowOneByOne from "../animation/ShowOneByOne";
 
 export default function Blogs() {
   return (
@@ -17,7 +17,7 @@ export default function Blogs() {
       <div className="py-10 gap-y-12 gap-x-5 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {blogs?.slice(0, 4).map((blog, index) => (
           <ShowOneByOne key={index} index={index}>
-            <PinContainer
+            <ThreeDPin
               title={"reerer"}
               project={<HomeBlogCard blog={blog} />}
               links={[
@@ -29,7 +29,7 @@ export default function Blogs() {
               ]}
             >
               <HomeBlogCard blog={blog} />
-            </PinContainer>
+            </ThreeDPin>
           </ShowOneByOne>
         ))}
       </div>
