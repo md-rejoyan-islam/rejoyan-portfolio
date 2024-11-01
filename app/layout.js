@@ -1,10 +1,11 @@
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import { geistMono, geistSans, incognito } from "./fonts/font";
-import { StickyNav } from "@/components/shared/StickyNav";
-import Socials from "@/components/shared/Socials";
 import Footer from "@/components/shared/Footer";
 import ScrollToTopButton from "@/components/shared/ScrollToTopButton";
+import Socials from "@/components/shared/Socials";
+import { StickyNav } from "@/components/shared/StickyNav";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { Spotlight } from "@/components/ui/spotlight";
+import { geistMono, geistSans, incognito } from "./fonts/font";
+import "./globals.css";
 
 export const metadata = {
   title: "Rejoyan Islam",
@@ -35,7 +36,11 @@ export default function RootLayout({ children }) {
         >
           {/* <Navbar /> */}
           <StickyNav />
-          
+          <Spotlight
+            className="top-40 left-0 md:left-96 md:top-0 z-50  "
+            fill="rgba(16, 163, 233, .7)"
+          />
+
           <main className="mx-auto max-container  px-4">{children}</main>
           <Socials direction="col" position="fixed" />
           <ScrollToTopButton />

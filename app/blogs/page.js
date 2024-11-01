@@ -1,7 +1,6 @@
 "use client";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import BlogCard from "@/components/blogs/BlogCard";
-import { Spotlight } from "@/components/ui/spotlight";
 import { blogs } from "@/data/blogs";
 import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
@@ -46,10 +45,10 @@ export default function Blogs() {
 
   return (
     <div className="pt-10 pb-12 px-3 sm:px-4 relative">
-      <Spotlight
+      {/* <Spotlight
         className="top-40 left-0 md:left-96 md:top-0 z-50  "
         fill="rgba(16, 163, 233, .7)"
-      />
+      /> */}
 
       <div>
         <motion.h1
@@ -63,7 +62,7 @@ export default function Blogs() {
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/4 blur-sm" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/4" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4 " />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
           </div>
         </motion.h1>
 

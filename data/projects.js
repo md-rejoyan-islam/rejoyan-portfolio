@@ -1,11 +1,11 @@
-import { FaGithub, FaExternalLinkAlt, FaServer } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaServer } from "react-icons/fa";
 import { LuFigma } from "react-icons/lu";
 
 export const projects = [
   {
     name: "TRAFALGAR - Online Medical Service",
     description:
-      "Trafalgar offers affordable, progressive healthcare solutions accessible online and on mobile, tailored to individual health needs with top doctors.",
+      "Trafalgar is a landing page for an online medical service that provides a range of health services, including online consultations, appointments, and medical advice. The landing page is designed to be user-friendly, informative, and visually appealing, with a focus on accessibility and ease of use.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/trafalgar.png",
     links: [
@@ -29,7 +29,7 @@ export const projects = [
   {
     name: "POSITIVUS - Digital Marketing Agency",
     description:
-      "Positivus helps businesses grow online with SEO, PPC, social media marketing, and content creation, showcasing success through detailed case studies.",
+      "Positivus is a landing page for a digital marketing agency that offers a range of services, including social media marketing, content creation, and search engine optimization. The landing page is designed to be visually appealing, informative, and user-friendly, with a focus on showcasing the agency's services",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/positivus.png",
     links: [
@@ -53,7 +53,7 @@ export const projects = [
   {
     name: "Bizpro - Business Promotion Solution",
     description:
-      "BizPro helps businesses promote their brand online with tailored packages, secure strategies, expert support, and effective communication tools.",
+      "Bizpro is a landing page for a business promotion solution that offers a range of srvices, including social media marketing, content creation, and search engine optimization. The landing page is designed to be visually appealing, informative, and user-friendly, with a focus on showcasing the solution's services.",
     techStack: ["HTML", "CSS", "Javascript", "Figma"],
     banner: "/image/projects/bizpro.png",
     links: [

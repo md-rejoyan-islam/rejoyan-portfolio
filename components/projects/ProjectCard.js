@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function ProjectCard({ project }) {
   return (
-    <div className="moving-car">
-      <div className=" backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
+    <div className="moving-card">
+      <div className=" hover:dark:bg-grid-small-white/[0.2] dark:bg-grid-small-white/[0.1] bg-grid-small-black/[0.1] hover:bg-grid-small-black/[0.2]  backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
           src={project?.banner}
           alt="Currencee"
@@ -17,10 +17,10 @@ export default function ProjectCard({ project }) {
           style={{ color: "transparent" }}
         />
         <div className="pt-3">
-          <h2 className="text-xl font-medium tracking-wide mb-1 text-text-primary ">
+          <h2 className="relative z-10 pt-1 transition duration-200 ease-in-out text-2xl font-incognit font-semibold tracking-tight ">
             {project?.name}
           </h2>
-          <div className="text-sm text-text-secondary ">
+          <div className="text-sm text-text-secondary py-2">
             {project?.description}
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
       <div className="absolute z-[100] bottom-0 h-fit -translate-y-1/3 mx-auto  right-0 w-3/4">
-        <div className="bg-[rgba(0,255,145,0.33)]  dark:bg-[rgba(115,0,255,0.48)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
+        <div className="bg-[rgb(87,223,146)]  dark:bg-[rgba(0,229,255,0.58)] aspect-square  opacity-20 w-full max-w-full  rounded-full filter blur-3xl" />
       </div>
     </div>
   );

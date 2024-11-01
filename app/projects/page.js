@@ -3,7 +3,6 @@ import ThreeDPin from "@/components/animation/3d-pin";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/button";
-import { Spotlight } from "@/components/ui/spotlight";
 import { filterKeys, projects as projectsData } from "@/data/projects";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -41,10 +40,10 @@ export default function Projects() {
 
   return (
     <div className="pt-10 pb-12 px-3 sm:px-4 relative">
-      <Spotlight
-        className="top-40 left-0 md:left-60 md:top-20 z-50  "
-        fill="rgba(255, 182, 193, 0.60)"
-      />
+      {/* <Spotlight
+        className="top-40 left-0 md:left-96 md:top-0 z-50  "
+        fill="rgba(16, 163, 233, .7)"
+      /> */}
       <div>
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -109,7 +108,7 @@ export default function Projects() {
       </div>
       <div>
         <motion.section
-          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-16  relative"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-x-12 gap-y-12  relative items-start "
           ref={scopeRef}
           transition={{ delay: 1.3 }}
           initial={{ opacity: 0 }}

@@ -13,7 +13,7 @@ export default function BlogCard({ blog }) {
       className="cursor-pointer"
     >
       <CardContainer className="inter-var  bg-project-card-background rounded-xl hover:shadow-2xl hover:shadow-[#78ffc042] dark:hover:shadow-[#373b6d42] ">
-        <CardBody className=" relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]  border-project-card-border w-auto  h-auto rounded-xl p-6 border hover:dark:bg-grid-small-white/[0.2] dark:bg-grid-small-white/[0.1] bg-grid-small-black/[0.1] hover:bg-grid-small-black/[0.2] ">
+        <CardBody className=" relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]  border-project-card-border  w-auto  h-auto rounded-xl p-6 border hover:dark:bg-grid-small-white/[0.2] dark:bg-grid-small-white/[0.1] bg-grid-small-black/[0.1] hover:bg-grid-small-black/[0.2] ">
           <CardItem translateZ="50" className="w-full mt-1">
             <Image
               alt={blog?.title}
