@@ -3,14 +3,11 @@
 import { FaUserNinja } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 
-import ShowLottieFile from "../ShowLottieFile";
-
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect } from "react";
-import lootieAnimation from "../../app/public/bannerAnimation.json";
 import AnimatedButton from "../animation/AnimatedButton";
-import { BackgroundLines } from "../ui/background-lines";
 import { FlipWords } from "../ui/flip-words";
+import { IconCloud } from "../ui/IconCloud";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 export default function Banner() {
@@ -24,6 +21,38 @@ export default function Banner() {
 
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 5.5 });
+  const slugs = [
+    "typescript",
+    "javascript",
+    "dart",
+    "java",
+    "react",
+    "flutter",
+    "android",
+    "html5",
+    "css3",
+    "nodedotjs",
+    "express",
+    "nextdotjs",
+    "prisma",
+    "amazonaws",
+    "postgresql",
+    "firebase",
+    "nginx",
+    "vercel",
+    "testinglibrary",
+    "jest",
+    "cypress",
+    "docker",
+    "git",
+    "jira",
+    "github",
+    "gitlab",
+    "visualstudiocode",
+    "androidstudio",
+    "sonarqube",
+    "figma",
+  ];
 
   useEffect(() => {
     animate(
@@ -53,7 +82,7 @@ export default function Banner() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.5 }}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r  to-[#2a0ca1]  via-[#5f3573] from-[#b52ac4] ">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r  to-[#1cc8ff]   from-[#583cea] ">
             Md. Rejoyan Islam
           </span>{" "}
           <br />
@@ -121,13 +150,9 @@ export default function Banner() {
 
       <div className=" w-0 lg:w-full  lg:col-span-1 order-1 lg:order-2 relative">
         <div className="lg:absolute top-0 bottom-0 my-auto flex flex-col justify-center -left-40 overflow-hidden">
-          <BackgroundLines>
-            <ShowLottieFile
-              src={lootieAnimation}
-              loop={true}
-              className={"max-w-[600px] mx-auto lg:w-[120%]"}
-            />
-          </BackgroundLines>
+          <div className="relative flex size-full items-center justify-center overflow-hidden  p-10 ">
+            <IconCloud iconSlugs={slugs} />
+          </div>
         </div>
       </div>
     </div>

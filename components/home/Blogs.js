@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import ShowOneByOne from "../animation/ShowOneByOne";
 import BlogCard from "../blogs/BlogCard";
 import { BlogButton } from "../projects/HomeButtons";
+import TextAnimation from "../ui/TextAnimation";
 
 export default function Blogs() {
   const [blogScope, BlogAnimate] = useAnimate();
@@ -24,7 +25,19 @@ export default function Blogs() {
     <section className="py-10">
       <div className="flex justify-between items-center gap-12">
         <h2 className="font-incognito text-4xl text-text-root font-semibold tracking-tight">
-          Blogs
+          <TextAnimation
+            text="Blogs"
+            as="span"
+            variants={{
+              hidden: { filter: "blur(10px)", opacity: 0, y: 20 },
+              visible: {
+                filter: "blur(0px)",
+                opacity: 1,
+                y: 0,
+                transition: { ease: "linear" },
+              },
+            }}
+          />
         </h2>
         <BlogButton />
       </div>

@@ -30,7 +30,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn("w-fit", containerClassName)}
+        className={cn("w-fit shadow-xl ", containerClassName)}
         style={{
           perspective: "1000px",
         }}
@@ -41,7 +41,7 @@ export const CardContainer = ({ children, className, containerClassName }) => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className={cn(
-            "relative transition-all duration-200 ease-linear w-fit",
+            "relative transition-all duration-200  ease-linear w-fit",
             className
           )}
           style={{
@@ -59,7 +59,7 @@ export const CardBody = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "[transform-style:preserve-3d] hover:shadow-[#70ffb0]   [&>*]:[transform-style:preserve-3d]",
         className
       )}
     >
@@ -99,7 +99,10 @@ export const CardItem = ({
   return (
     <Tag
       ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
+      className={cn(
+        "w-fit transition hover:shadow-[#70ffb0]   duration-200 ease-linear",
+        className
+      )}
       {...rest}
     >
       {children}

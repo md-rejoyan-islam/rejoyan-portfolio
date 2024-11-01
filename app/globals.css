@@ -100,7 +100,7 @@ html {
 @layer base {
   :root {
     --project-card-text: #222;
-    --project-card-background: #f8fafc;
+    --project-card-background: #f5f3fe;
     --project-card-bg-secondary: #f9fdfa;
     --project-card-border: #a7e0f5;
     --background-secondary: #fff;

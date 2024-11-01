@@ -1,6 +1,7 @@
 "use client";
 
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import { TextShimmer } from "../ui/TextShimmer";
 
 export default function AnimatedButton({ title, icon }) {
   return (
@@ -11,7 +12,8 @@ export default function AnimatedButton({ title, icon }) {
         icon ? "hover:gap-4  transition-all duration-300" : ""
       } `}
     >
-      <span>{title}</span>
+      <TextShimmer duration={1.2}>{title}</TextShimmer>
+
       {icon && icon}
     </HoverBorderGradient>
   );

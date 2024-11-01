@@ -1,6 +1,7 @@
 "use client";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import BlogCard from "@/components/blogs/BlogCard";
+import { LetterPullup } from "@/components/ui/LetterPullUp";
 import { blogs } from "@/data/blogs";
 import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
@@ -51,20 +52,16 @@ export default function Blogs() {
       /> */}
 
       <div>
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]"
-        >
-          <span>Blog</span>
+        <h1 className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-5xl text-3xl mb-5 sm:mb-6 lg:leading-[3.7rem]">
+          <LetterPullup words={"Blogs"} delay={0.1} />
+
           <div className="relative">
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/4 blur-sm" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/4" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
           </div>
-        </motion.h1>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: -20 }}

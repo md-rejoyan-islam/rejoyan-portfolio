@@ -1,17 +1,33 @@
 "use client";
 import Image from "next/image";
-import { BackgroundGradient } from "../ui/background-gradient";
+import { BackgroundLines } from "../ui/background-lines";
+import { LetterPullup } from "../ui/LetterPullUp";
+import { NeonGradientCard } from "../ui/NeonGradientCard";
+import TextAnimation from "../ui/TextAnimation";
 import photo from "./../../app/public/images/rejoyan.jpeg";
 
 export default function About() {
   return (
     <section className="py-10">
       <h2 className="font-incognito text-text-root text-4xl font-semibold tracking-tight">
-        About Me
+        <TextAnimation
+          text="About Me"
+          as="p"
+          variants={{
+            hidden: { filter: "blur(10px)", opacity: 0, y: 20 },
+            visible: {
+              filter: "blur(0px)",
+              opacity: 1,
+              y: 0,
+              transition: { ease: "linear" },
+            },
+          }}
+        />
+        <LetterPullup words={""} delay={0.1} />
       </h2>
-      <div className="pt-10">
-        <div className=" grid grid-cols-1 lg:grid-cols-5 lg:gap-40 gap-20  text-[#8892b0] justify-items-center ">
-          <div className=" grid place-content-center lg:col-span-3">
+      <div className="">
+        <div className=" grid grid-cols-1 lg:grid-cols-7 lg:gap-41 gap-16   text-[#8892b0] justify-items-center ">
+          <div className=" grid place-content-center lg:col-span-4">
             <div className="space-y-5">
               <p>
                 Hello! My name is Md Rejoyan Islam, and I&apos;m a full-stack
@@ -33,20 +49,28 @@ export default function About() {
               </p>
             </div>
           </div>
-          <div className="flex-1  lg:col-span-2 px-6 max-w-[400px]">
-            <BackgroundGradient className="rounded-[22px] p-1">
-              {" "}
-              <figure className="relative" id="imgFigur">
-                <Image
-                  src={photo}
-                  alt="Md. Rejoyan Islam"
-                  height={"400"}
-                  width={"400"}
-                  className="   mix-blend-multiple  rounded-[22px]"
-                />
+          <div className="flex-1  lg:col-span-3 px-6  relative">
+            <BackgroundLines
+              svgOptions={{
+                duration: 1,
+              }}
+            >
+              <figure className="relative px-16 py-6" id="imgFigur">
+                <NeonGradientCard borderSize={1} borderRadius={15}>
+                  <Image
+                    src={photo}
+                    alt="Md. Rejoyan Islam"
+                    height={"400"}
+                    width={"400"}
+                    className="   mix-blend-multiple  rounded-[15px]"
+                  />
+                </NeonGradientCard>
                 {/* <div className="w-full h-full absolute top-0 rounded-md  border-red-400 border-2 -z-10 "></div> */}
               </figure>
-            </BackgroundGradient>
+            </BackgroundLines>
+            {/* <BackgroundGradient className="rounded-[22px] p-1">
+              {" "}
+            </BackgroundGradient> */}
           </div>
         </div>
       </div>
