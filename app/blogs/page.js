@@ -15,9 +15,14 @@ export default function Blogs() {
   const blogStaggerList = stagger(0.2, { startDelay: 1.3 });
 
   // Get unique blog sites
-  const groupedBlogs = blogs.length
-    ? Object?.groupBy(blogs, (blog) => blog.host.name)
-    : {};
+  const groupedBlogs = blogs.reduce((acc, blog) => {
+    const key = blog.host.name;
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(blog);
+    return acc;
+  }, {});
   console.log(groupedBlogs);
 
   const blogSites = Object.keys(groupedBlogs).map((site) => ({
