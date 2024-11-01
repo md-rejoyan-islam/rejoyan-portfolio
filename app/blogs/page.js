@@ -15,7 +15,11 @@ export default function Blogs() {
   const blogStaggerList = stagger(0.2, { startDelay: 1.3 });
 
   // Get unique blog sites
-  const groupedBlogs = Object.groupBy(blogs, (blog) => blog.host.name);
+  const groupedBlogs = blogs.length
+    ? Object?.groupBy(blogs, (blog) => blog.host.name)
+    : {};
+  console.log(groupedBlogs);
+
   const blogSites = Object.keys(groupedBlogs).map((site) => ({
     name: site,
     icon: groupedBlogs[site][0].host.icon,
