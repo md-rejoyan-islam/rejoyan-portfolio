@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "api.microlink.io",
       },
+      {
+        hostname: "cdn.hashnode.com",
+      },
     ],
   },
 };

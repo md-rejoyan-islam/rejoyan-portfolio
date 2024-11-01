@@ -1,10 +1,4 @@
 "use client";
-import { RiMenu3Line } from "react-icons/ri";
-import { useEffect, useState } from "react";
-import ThemeSwitch from "../theme/ThemeSwitch";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { stagger, motion, useAnimate } from "framer-motion";
 import {
   Sheet,
   SheetContent,
@@ -13,6 +7,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { motion, stagger, useAnimate } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { RiMenu3Line } from "react-icons/ri";
+import ThemeSwitch from "../theme/ThemeSwitch";
 
 export default function Navbar() {
   const links = [
@@ -58,10 +58,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`text-text-secondary h-[70px] max-container mx-auto    px-4 `}
+      className={`text-text-secondary h-[70px] max-container mx-auto    px-4  `}
     >
       <div
-        className="flex items-center justify-between  mx-auto h-full"
+        className="flex items-center justify-between  mx-auto h-full "
         id="up-btn"
       >
         <div className="">

@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 
-import { cn } from "@/lib/utils";
 import Navbar from "@/components/shared/Navbar";
+import { cn } from "@/lib/utils";
 
 export const StickyNav = ({ className }) => {
   const { scrollYProgress } = useScroll();
@@ -44,10 +44,8 @@ export const StickyNav = ({ className }) => {
         }}
         className={cn(
           ` ${
-            visible
-              ? " shadow-[0_10px_30px_-10px_var(--navbar-shadow)]"
-              : "shadow-none"
-          } w-full  fixed   backdrop-blur-lg  inset-x-0 mx-auto  z-[500]   items-center justify-center`,
+            visible ? " " : "shadow-none"
+          } w-full  fixed  border-b border-[#e9e8e8] dark:border-[#121b3d] bg-transparent  backdrop-blur-lg  inset-x-0 mx-auto  z-[500]   items-center justify-center`,
           className
         )}
       >

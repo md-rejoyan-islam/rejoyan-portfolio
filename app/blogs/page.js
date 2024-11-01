@@ -2,7 +2,7 @@
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import BlogCard from "@/components/blogs/BlogCard";
 import { Spotlight } from "@/components/ui/spotlight";
-import { blogs, blogSites } from "@/data/blogs";
+import { blogs } from "@/data/blogs";
 import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -13,6 +13,14 @@ export default function Blogs() {
 
   const staggerList = stagger(0.1, { startDelay: 0.6 });
   const blogStaggerList = stagger(0.2, { startDelay: 1.3 });
+
+  // Get unique blog sites
+  const groupedBlogs = Object.groupBy(blogs, (blog) => blog.host.name);
+  const blogSites = Object.keys(groupedBlogs).map((site) => ({
+    name: site,
+    icon: groupedBlogs[site][0].host.icon,
+    link: groupedBlogs[site][0].host.link,
+  }));
 
   useEffect(() => {
     animate(
@@ -39,8 +47,8 @@ export default function Blogs() {
   return (
     <div className="pt-10 pb-12 px-3 sm:px-4 relative">
       <Spotlight
-        className="top-40 left-0 md:left-60 md:top-20 z-50  "
-        fill="rgba(255, 182, 193, 0.60)"
+        className="top-40 left-0 md:left-96 md:top-0 z-50  "
+        fill="rgba(16, 163, 233, .7)"
       />
 
       <div>
@@ -55,7 +63,7 @@ export default function Blogs() {
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-1/4 blur-sm" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-1/4" />
             <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+            <div className="absolute mx-auto inset-0 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4 " />
           </div>
         </motion.h1>
 
@@ -80,8 +88,8 @@ export default function Blogs() {
               <Link
                 rel="noopener"
                 target="_blank"
-                className="flex items-center group"
                 href={site.link}
+                className="flex items-center group"
               >
                 {site.icon}
                 &nbsp;
