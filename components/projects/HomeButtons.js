@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FaLocationArrow } from "react-icons/fa";
-import AnimatedButton from "../animation/AnimatedButton";
+import TextShimmerButton from "../home/TextShimmerButton";
 
 export function ProjectButton() {
   const router = useRouter();
@@ -12,10 +12,11 @@ export function ProjectButton() {
 
   return (
     <div onClick={handleClick}>
-      <AnimatedButton
-        title={"All Projects"}
-        icon={<FaLocationArrow />}
-      ></AnimatedButton>
+      <TextShimmerButton duration={1.2} title={"All Projects"} icon={true}>
+        <span className=" group-hover:animate-bounce">
+          <FaLocationArrow />
+        </span>
+      </TextShimmerButton>
     </div>
   );
 }
@@ -28,10 +29,11 @@ export function BlogButton() {
 
   return (
     <div onClick={handleClick}>
-      <AnimatedButton
-        title={"All Blogs"}
-        icon={<FaLocationArrow />}
-      ></AnimatedButton>
+      <TextShimmerButton duration={1.2} title={"All Blogs"} icon={true}>
+        <span className=" group-hover:animate-bounce">
+          <FaLocationArrow />
+        </span>
+      </TextShimmerButton>
     </div>
   );
 }

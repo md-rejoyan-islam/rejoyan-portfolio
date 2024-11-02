@@ -9,7 +9,7 @@ export default function TextShimmerButton({
 }) {
   return (
     <button
-      className={`flex group  justify-start font-semibold   uppercase py-2 px-3.5 rounded-md items-center text-[#fff] bg-[#583cea]   dark:bg-[#12133583] gap-2.5 ${
+      className={`flex group  justify-start font-semibold   uppercase py-2 px-3.5 rounded-md items-center text-[#fff] bg-[#583cea]   dark:bg-[#0ac7ff] gap-2.5 ${
         icon && "transition-all duration-300 "
       }${width ? width : "w-full"}
           `}

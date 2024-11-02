@@ -19,7 +19,7 @@ export default function ServiceCard({ index, service }) {
       className={`group relative z-0  h-full      overflow-hidden rounded-xl border border-project-card-border    transition-all duration-500 backdrop-blur-3xl `}
       style={{
         background: position.x
-          ? `radial-gradient(500px circle at ${position.x}px ${position.y}px, #ee6eff, transparent, transparent 70%)`
+          ? `radial-gradient(500px circle at ${position.x}px ${position.y}px, var(--project-card-hover), transparent, transparent 70%)`
           : "",
       }}
       onMouseMove={(event) => handleMouseMove(event, index)}
@@ -46,7 +46,7 @@ export default function ServiceCard({ index, service }) {
         </div>
       </div>
       <div
-        className="absolute  h-4/5 w-4/5 bg-[linear-gradient(180deg,_#ee6eff,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] dark:bg-[linear-gradient(180deg,_#ee6eff30,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)]  opacity-0 blur-[70px]  group-hover:opacity-90"
+        className="absolute  h-4/5 w-4/5  bg-[linear-gradient(180deg,_#c6bdf8,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] dark:bg-[linear-gradient(180deg,_#ee6eff30,_rgba(59,_130,_246,_0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)]  opacity-0 blur-[70px]  group-hover:opacity-90"
         style={{
           transform: "translate(-50%, -50%)",
           top: `${position.y}px`,

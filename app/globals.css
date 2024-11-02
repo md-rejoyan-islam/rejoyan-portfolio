@@ -101,16 +101,18 @@ html {
   :root {
     --project-card-text: #222;
     --project-card-background: #f5f3fe;
-    --project-card-bg-secondary: #f9fdfa;
-    --project-card-border: #a7e0f5;
+    --project-card-bg-secondary: #f7f6fe;
+    --project-card-hover: #593ceabf;
+    --project-card-border: #593cea8e;
     --background-secondary: #fff;
     --moving-border: #223eac;
-    --button: #0088ff;
+
     --button-text: #201ce2;
     --text-root: #583cea;
     --text-primary: #1f2937;
     --text-secondary: #5e5d5d;
-    --button-bg: #0088ff1c;
+    --button: #583cea;
+    --button-bg: #593cea22;
     --navbar-shadow: #d4d4d4b3;
     --selected: #dde2e8c2;
     --dropdown: #fdfeff;
@@ -152,6 +154,7 @@ html {
   .dark {
     --project-card-text: #fff;
     --project-card-background: #0d132a;
+    --project-card-hover: #ee6eff;
     --project-card-bg-secondary: #071124;
     --project-card-border: #312f55;
     --moving-border: #3badff;

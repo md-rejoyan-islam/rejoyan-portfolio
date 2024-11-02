@@ -7,7 +7,7 @@ export default function ProjectCard({ project }) {
     <div className="moving-card">
       <div className=" hover:dark:bg-grid-small-white/[0.2] dark:bg-grid-small-white/[0.1] bg-grid-small-black/[0.1] hover:bg-grid-small-black/[0.2]  backdrop-blur-xl relative border border-project-card-border  group overflow-hidden rounded-[15px] gap-x-4 bg-project-card-background  p-4">
         <Image
-          src={project?.banner}
+          src={project?.banner || "https://rejoyan.vercel.app"}
           alt="Currencee"
           loading="lazy"
           width={200}
