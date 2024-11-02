@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${incognito.variable} relative scroll-smooth antialiased text-primary bg-background-secondary`}
+        className={`${geistSans.variable} ${geistMono.variable} ${incognito.variable} relative scroll-smooth antialiased text-primary bg-background-secondary overflow-x-hidden`}
         suppressHydrationWarning={true}
       >
         <ThemeProvider
@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
         >
           {/* <Navbar /> */}
           <StickyNav />
+
           <Spotlight
             className="top-40 left-0 md:left-96 md:top-0 z-50  "
             fill="rgba(16, 163, 233, .7)"
