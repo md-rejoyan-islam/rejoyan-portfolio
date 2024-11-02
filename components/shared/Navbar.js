@@ -11,7 +11,9 @@ import { motion, stagger, useAnimate } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import { RiMenu3Line } from "react-icons/ri";
+import TextShimmerButton from "../home/TextShimmerButton";
 import ThemeSwitch from "../theme/ThemeSwitch";
 
 export default function Navbar() {
@@ -68,14 +70,65 @@ export default function Navbar() {
           {/* for medium and large screens  */}
           <nav>
             <ul
-              className="hidden md:flex  gap-10 justify-center items-center"
+              className="hidden md:flex font-semibold text-lg  gap-10 justify-center items-center"
               ref={scope}
             >
+              <motion.li style={{ opacity: 0, scale: 0.3, x: -50 }}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x={0}
+                  y={0}
+                  viewBox="0 0 48 48"
+                  style={{ enableBackground: "new 0 0 512 512" }}
+                  xmlSpace="preserve"
+                  className="w-10 h-10"
+                >
+                  <g>
+                    <linearGradient
+                      id="a"
+                      x1="8.609"
+                      x2="40.619"
+                      y1="8.609"
+                      y2="40.619"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset={0} stopColor="#9b8dff" />
+                      <stop offset=".252" stopColor="#7d79fd" />
+                      <stop offset=".555" stopColor="#5f65fb" />
+                      <stop offset=".815" stopColor="#4d58f9" />
+                      <stop offset={1} stopColor="#4654f9" />
+                    </linearGradient>
+                    <rect
+                      width={40}
+                      height={40}
+                      x={4}
+                      y={4}
+                      fill="url(#a)"
+                      rx={10}
+                      opacity={1}
+                      data-original="url(#a)"
+                      className="hovered-path"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M18 29.5a1.5 1.5 0 0 1-1.061-.439l-4-4a1.5 1.5 0 0 1 0-2.122l4-4a1.5 1.5 0 0 1 2.122 2.122L16.121 24l2.94 2.939A1.5 1.5 0 0 1 18 29.5zM30 29.5a1.5 1.5 0 0 1-1.061-2.561L31.879 24l-2.94-2.939a1.5 1.5 0 0 1 2.122-2.122l4 4a1.5 1.5 0 0 1 0 2.122l-4 4A1.5 1.5 0 0 1 30 29.5z"
+                      opacity=".9"
+                    />
+                    <path
+                      fill="#fff"
+                      d="M22 32.5a1.514 1.514 0 0 1-.413-.058 1.5 1.5 0 0 1-1.03-1.854l4-14a1.5 1.5 0 1 1 2.884.824l-4 14A1.5 1.5 0 0 1 22 32.5z"
+                      opacity=".5"
+                    />
+                  </g>
+                </svg>
+              </motion.li>
               {links.map((link, index) => (
                 <motion.li
                   className={`${
                     pathname === link.href ? "text-text-root" : ""
-                  } hover:text-text-root group`}
+                  } hover:text-text-root group mt-2`}
                   key={index}
                   style={{ opacity: 0, scale: 0.3, x: -50 }}
                 >
@@ -121,7 +174,19 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
-        <ThemeSwitch />
+        <div className="flex gap-3 items-center">
+          <TextShimmerButton
+            duration={1.2}
+            title={"Follow on GitHub"}
+            icon={true}
+            width={"hover:gap-4"}
+          >
+            <span className="group-hover:animate-pulse">
+              <FaGithub />
+            </span>
+          </TextShimmerButton>
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );

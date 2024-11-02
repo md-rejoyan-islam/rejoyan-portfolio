@@ -3,8 +3,9 @@
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { FiSun } from "react-icons/fi";
+import { LuMoonStar } from "react-icons/lu";
+import { MdOutlineImportantDevices } from "react-icons/md";
 import { useOnClickOutside } from "usehooks-ts";
-import ColorMovingButton from "../animation/ColorMovingButton";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -15,56 +16,76 @@ export default function ThemeSwitch() {
   useOnClickOutside(ref, () => setIsOpen(false));
   if (!mounted)
     return (
-      <ColorMovingButton>
-        <button
-          className="bg-background-secondary hover:gap-4 transition-all rounded-xl uppercase py-2 px-3 flex gap-2 items-center"
-          // onClick={hashAdded}
-        >
-          <span>Theme</span>
-          <FiSun />
-        </button>
-      </ColorMovingButton>
+      <button
+        className="bg-background-secondary hover:gap-4 transition-all rounded-xl uppercase py-2 px-3 flex gap-2 items-center"
+        // onClick={hashAdded}
+      >
+        {/* <span>Theme</span> */}
+        <FiSun />
+      </button>
     );
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+  const toggleMenus = [
+    {
+      id: 1,
+      name: "Light",
+      key: "light",
+      icon: <FiSun />,
+    },
+    {
+      id: 2,
+      name: "Dark",
+      key: "dark",
+      icon: <LuMoonStar />,
+    },
+    {
+      id: 3,
+      name: "System",
+      key: "system",
+      icon: <MdOutlineImportantDevices />,
+    },
+  ];
 
   return (
     <div ref={ref} className="relative inline-block text-left">
-      <ColorMovingButton>
-        <button
-          className="bg-background-secondary  hover:gap-4 transition-all rounded-xl  py-1.5 px-4 flex gap-2 items-center"
-          onClick={toggleDropdown}
-        >
-          <span>Theme</span>
-          <FiSun />
-        </button>
-      </ColorMovingButton>
+      <button
+        className="bg-background-secondary border h-10 w-10  hover:gap-4 transition-all rounded-lg   justify-center flex gap-2 items-center hover:bg-black/5 "
+        onClick={toggleDropdown}
+      >
+        {toggleMenus.map((themeItem) => {
+          if (themeItem.key === theme) {
+            return themeItem.icon;
+          }
+        })}
+      </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-full origin-top-right rounded-md text-text-primary bg-dropdown shadow-lg">
+        <div className="absolute right-0 mt-2 w-32 origin-top-right rounded-md text-text-primary bg-dropdown shadow-xl">
           <div
             className="py-1 "
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            {themes.map((themeItem) => {
+            {toggleMenus.map((themeItem) => {
               return (
                 <button
-                  key={themeItem}
+                  key={themeItem.id}
                   onClick={() => {
-                    setTheme(themeItem);
+                    setTheme(themeItem.key);
                     setIsOpen(false);
                   }}
-                  className={`block w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
-                    themeItem === theme
-                      ? "bg-selected text-text-root  hover:bg-selected"
+                  className={` flex gap-2 items-center w-full px-4 py-2 text-left text-sm hover:bg-dropdownHover ${
+                    themeItem.key === theme
+                      ? "bg-selected text-text-root   hover:bg-selected"
                       : ""
                   }`}
                 >
-                  {themeItem}
+                  {themeItem.icon}
+                  {themeItem.name}
                 </button>
               );
             })}

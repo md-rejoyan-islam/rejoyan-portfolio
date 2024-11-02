@@ -5,11 +5,11 @@ import { MdFileDownload } from "react-icons/md";
 
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect, useRef } from "react";
-import AnimatedButton from "../animation/AnimatedButton";
 import { FlipWords } from "../ui/flip-words";
 import { IconCloud } from "../ui/IconCloud";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { TimelineContent } from "../ui/TimeLineContent";
+import TextShimmerButton from "./TextShimmerButton";
 
 export default function Banner() {
   const words = [
@@ -109,7 +109,7 @@ export default function Banner() {
             <FlipWords
               words={words}
               className={
-                "bg-clip-text inline-block overflow-hidden text-wrap text-[3em] text-transparent bg-gradient-to-r from-[#4d1cb8] via-[#12e435] to-[#b72a77]"
+                "bg-clip-text inline-block overflow-hidden text-wrap text-[3em] text-text-primary"
               }
             />
           </motion.div>
@@ -146,16 +146,27 @@ export default function Banner() {
             ref={scope}
           >
             <motion.li style={{ opacity: 0, scale: 0.3, x: -50 }}>
-              <AnimatedButton
+              <TextShimmerButton
+                duration={1.2}
                 title={"Contact me"}
-                icon={<FaUserNinja />}
-              ></AnimatedButton>
+                icon={true}
+                width={"w-[160px] hover:gap-4"}
+              >
+                <span className="group-hover:animate-pulse">
+                  <FaUserNinja />
+                </span>
+              </TextShimmerButton>
             </motion.li>
             <motion.li style={{ opacity: 0, scale: 0.3, x: -50 }}>
-              <AnimatedButton
+              <TextShimmerButton
+                duration={1.2}
                 title={"Get Resume"}
-                icon={<MdFileDownload />}
-              ></AnimatedButton>
+                icon={true}
+              >
+                <span className=" group-hover:animate-bounce">
+                  <MdFileDownload />
+                </span>
+              </TextShimmerButton>
             </motion.li>
           </ul>
         </div>

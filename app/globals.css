@@ -107,21 +107,22 @@ html {
     --moving-border: #223eac;
     --button: #0088ff;
     --button-text: #201ce2;
-    --text-root: #0088ff;
+    --text-root: #583cea;
     --text-primary: #1f2937;
-    --text-secondary: #5c6066;
+    --text-secondary: #5e5d5d;
     --button-bg: #0088ff1c;
     --navbar-shadow: #d4d4d4b3;
+    --selected: #dde2e8c2;
+    --dropdown: #fdfeff;
+    --dropdown-hover: #f1f6f89f;
     --button-gradient: linear-gradient(270deg, #2504ff, #12e435, #ffc107);
 
     --primary: 0 0% 9%;
     --secondary: 0 0% 96.1%;
     --background: 0 0% 100%;
 
-    --dropdown: #e0f4ff;
-    --dropdown-hover: #b3e5ff;
     --button-secondary: #e7e7e7;
-    --selected: #9ec6ff;
+
     --logo-shadow: #053949;
     --logo-body: #00d8fe;
     --span-bg: linear-gradient(to right, #4e4e9e, #097fa5, #3e87ed);
