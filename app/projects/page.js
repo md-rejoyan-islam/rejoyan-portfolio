@@ -2,8 +2,8 @@
 import ThreeDPin from "@/components/animation/3d-pin";
 import ShowOneByOne from "@/components/animation/ShowOneByOne";
 import ProjectCard from "@/components/projects/ProjectCard";
-import { Button } from "@/components/ui/button";
 import { LetterPullup } from "@/components/ui/LetterPullUp";
+import { TabList } from "@/components/ui/TabList";
 import { filterKeys, projects as projectsData } from "@/data/projects";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -19,7 +19,7 @@ export default function Projects() {
 
   useEffect(() => {
     animate(
-      "li",
+      "button",
       { opacity: 1, scale: 1, x: 0 },
       {
         duration: 0.2,
@@ -76,36 +76,14 @@ export default function Projects() {
       </div>
       <div className="py-11 ">
         <ul className="flex items-center gap-4" ref={scope}>
-          {filterKeys?.map((item, index) => (
-            <motion.li key={index} style={{ opacity: 0, scale: 0.3, x: -50 }}>
-              <Button
-                size="small"
-                onClick={() => {
-                  setFilter(item?.name);
-                  if (item?.name === "All") {
-                    setProject([...projectsData]);
-                  } else {
-                    setProject(
-                      [...projectsData].filter((project) =>
-                        project.techStack.find((tech) => {
-                          return (
-                            tech.toLowerCase() === item?.name.toLowerCase()
-                          );
-                        })
-                      ) || []
-                    );
-                  }
-                }}
-                className={` px-2.5 text-[12px] py-1 border uppercase hover:bg-button-bg ${
-                  filter === item?.name
-                    ? "text-button bg-button-bg"
-                    : "text-text-secondary bg-transparent hover:bg-transparent hover:text-button"
-                } `}
-              >
-                {item?.name}
-              </Button>
-            </motion.li>
-          ))}
+          <TabList
+            tabs={[...filterKeys.map((item) => item?.name)]}
+            setFilter={setFilter}
+            setProject={setProject}
+            projectsData={projectsData}
+            ref={scope}
+            style={{ opacity: 0, scale: 0.3, x: -50 }}
+          />
         </ul>
       </div>
       <div>

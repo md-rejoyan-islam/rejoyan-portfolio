@@ -66,7 +66,7 @@ export default function Banner() {
   }, [staggerList, animate]);
 
   return (
-    <div className=" my-16 px-0 grid grid-cols-1 lg:grid-cols-3">
+    <div className=" my-0 sm:my-2 lg:my-16 px-0 grid grid-cols-1 lg:grid-cols-3">
       <div className=" lg:col-span-2 order-2 lg:order-1">
         <motion.h2
           className="text-text-primary text-3xl font-semibold"
@@ -148,9 +148,9 @@ export default function Banner() {
         </ul>
       </div>
 
-      <div className=" w-0 lg:w-full  lg:col-span-1 order-1 lg:order-2 relative">
+      <div className=" w-full lg:w-full  lg:col-span-1 order-1 lg:order-2 relative">
         <div className="lg:absolute top-0 bottom-0 my-auto flex flex-col justify-center -left-40 overflow-hidden">
-          <div className="relative flex size-full items-center justify-center overflow-hidden  p-10 ">
+          <div className="relative flex size-full items-center justify-center overflow-hidden p-4  sm:p-10 ">
             <IconCloud iconSlugs={slugs} />
           </div>
         </div>

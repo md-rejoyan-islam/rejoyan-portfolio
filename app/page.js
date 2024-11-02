@@ -6,6 +6,7 @@ import Education from "@/components/home/Education";
 import Projects from "@/components/home/Projects";
 import Services from "@/components/home/Services";
 import Skills from "@/components/home/Skills";
+import { WorkingProcess } from "@/components/home/WorkingProcess";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* skill */}
       <Skills />
+
+      {/* working process  */}
+      <WorkingProcess />
 
       {/* services */}
       <Services />

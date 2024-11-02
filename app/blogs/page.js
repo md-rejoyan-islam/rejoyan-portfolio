@@ -23,7 +23,6 @@ export default function Blogs() {
     acc[key].push(blog);
     return acc;
   }, {});
-  console.log(groupedBlogs);
 
   const blogSites = Object.keys(groupedBlogs).map((site) => ({
     name: site,
