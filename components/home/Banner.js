@@ -133,8 +133,8 @@ export default function Banner() {
           >
             <TextGenerateEffect
               words={paraWords}
-              className={"text-[#8892b0] text-[17px] sm:text-lg"}
-              duration={0.09}
+              className={"text-[#666687] text-[17px] sm:text-lg"}
+              duration={0.01}
             />
           </motion.div>
 

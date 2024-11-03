@@ -27,7 +27,7 @@ export default function About() {
         <LetterPullup words={""} delay={0.1} />
       </h2>
       <div className="">
-        <div className=" grid grid-cols-1 text-lg lg:grid-cols-7 lg:gap-41 gap-16   text-[#8892b0] justify-items-center ">
+        <div className=" grid grid-cols-1 text-lg lg:grid-cols-7 lg:gap-41 gap-16   text-[#666687] justify-items-center ">
           <div className=" grid place-content-center lg:col-span-4">
             <div className="space-y-5">
               <InView
