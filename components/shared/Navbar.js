@@ -175,16 +175,22 @@ export default function Navbar() {
           </Sheet>
         </div>
         <div className="flex gap-3 items-center">
-          <TextShimmerButton
-            duration={1.2}
-            title={"Follow on GitHub"}
-            icon={true}
-            width={"hover:gap-4 flex md:hidden lg:flex "}
+          <div
+            onClick={() => {
+              window.open("https://github.com/md-rejoyan-islam", "_blank");
+            }}
           >
-            <span className="group-hover:animate-pulse">
-              <FaGithub />
-            </span>
-          </TextShimmerButton>
+            <TextShimmerButton
+              duration={1.2}
+              title={"Follow on GitHub"}
+              icon={true}
+              width={"hover:gap-4 flex md:hidden lg:flex "}
+            >
+              <span className="group-hover:animate-pulse">
+                <FaGithub />
+              </span>
+            </TextShimmerButton>
+          </div>
           <ThemeSwitch />
         </div>
       </div>
