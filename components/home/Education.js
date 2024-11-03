@@ -30,10 +30,10 @@ export default function Education() {
               </h4>
               <span className=" h-full block w-1 bg-project-card-bg-secondary"></span>
             </div>
-            <div className=" gap-10 mt-1 col-span-9 pb-6">
+            <div className=" gap-10 mt-1 col-span-11 md:col-span-9 pb-6">
               <div>
                 <h3 className="text-text-primary text-2xl font-semibold">
-                  Learn Web Development
+                  Learn with Web Development
                 </h3>
 
                 <p className="text-text-secondary">

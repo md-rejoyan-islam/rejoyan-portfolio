@@ -109,13 +109,13 @@ export default function Banner() {
             <FlipWords
               words={words}
               className={
-                "bg-clip-text inline-block overflow-hidden text-wrap text-[3em] text-text-primary"
+                "bg-clip-text inline-block overflow-hidden text-wrap text-[2em] sm:text-[3em] text-text-primary"
               }
             />
           </motion.div>
 
           <motion.h2
-            className="  text-[3em] font-semibold "
+            className="  text-[2em] sm:text-[3em] font-semibold "
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1.4 }}
