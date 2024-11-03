@@ -4,7 +4,7 @@
 import { useEffect, useState, useTransition } from "react";
 
 import Image from "next/image";
-import lootieAnimation from "./loadingAnimation.gif";
+import lootieAnimation from "./public/loadingAnimation.gif";
 
 export default function LoadingWrapper({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);

@@ -31,7 +31,7 @@ export const StickyNav = ({ className }) => {
   });
 
   return (
-    <div className="h-[70px]">
+    <div className="h-[70px]  w-full relative">
       <motion.div
         initial={{
           opacity: 0,
@@ -45,7 +45,7 @@ export const StickyNav = ({ className }) => {
         className={cn(
           ` ${
             visible ? " " : "shadow-none"
-          } w-full  fixed  border-b border-[#e9e8e8] dark:border-[#121b3d] bg-transparent  backdrop-blur-lg  inset-x-0 mx-auto  z-[500]   items-center justify-center`,
+          }  left-0 top-0 inset-x-0 w-[100vw]  fixed    border-b border-[#e9e8e8] dark:border-[#121b3d] bg-transparent  backdrop-blur-lg    z-[500]   items-center justify-center`,
           className
         )}
       >

@@ -69,7 +69,7 @@ export default function Banner() {
 
   return (
     <div
-      className=" my-0 sm:my-2 lg:my-16 px-0 grid grid-cols-1 lg:grid-cols-3"
+      className=" my-0 sm:my-2 lg:my-16 px-0 grid grid-cols-1 lg:grid-cols-3 overflow-hidden"
       ref={bannerRef}
     >
       <TimelineContent
