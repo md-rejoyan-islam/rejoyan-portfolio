@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function SkillCard({ data }) {
   return (
     <div
-      className="flex relative bg-cover cursor-pointer border border-project-card-border flex-col justify-between project-card rounded-md bg-[project-card-bg-secondary] bg-[rgba(255, 255, 255, 0.05)]  overflow-hidden hover:-translate-y-2 w-40  h-32 transition:translate duration-300 m-3"
-      style={{
-        backgroundImage: `url('/gradient.svg')`,
-      }}
+      className="flex relative bg-cover cursor-pointer border border-project-card-border flex-col justify-between project-card rounded-md bg-[project-card-bg-secondary] bg-[rgba(255, 255, 255, 0.01)]  overflow-hidden hover:-translate-y-2 w-24  h-20 sm:w-32  md:w-40 sm:h-28  md:h-32 transition:translate duration-300 m-3   "
+      // style={{
+      //   backgroundImage: `url('/gradient.svg')`,
+      // }}
     >
       <div className=" flex justify-center -translate-y-[0px] top-bar">
         <div className="w-3/4">
@@ -19,9 +19,9 @@ export default function SkillCard({ data }) {
           alt={data.name}
           width={55}
           height={55}
-          className="mx-auto"
+          className="mx-auto w-8  sm:w-12  md:w-16 "
         />
-        <h3 className="text-base font-medium text-text-primary pt-2">
+        <h3 className="text-sm sm:text-base font-semibold text-text-primary pt-2 ">
           {data.name}
         </h3>
       </div>

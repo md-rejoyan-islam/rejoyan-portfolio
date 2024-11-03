@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FaLocationArrow } from "react-icons/fa";
+import { RiExternalLinkLine } from "react-icons/ri";
 import TextShimmerButton from "../home/TextShimmerButton";
 
 export function ProjectButton() {
@@ -12,9 +12,14 @@ export function ProjectButton() {
 
   return (
     <div onClick={handleClick}>
-      <TextShimmerButton duration={1.2} title={"All Projects"} icon={true}>
-        <span className=" group-hover:animate-bounce">
-          <FaLocationArrow />
+      <TextShimmerButton
+        duration={1.2}
+        title={"All Projects"}
+        icon={true}
+        width={"hover:gap-4"}
+      >
+        <span className=" ">
+          <RiExternalLinkLine />
         </span>
       </TextShimmerButton>
     </div>
@@ -29,9 +34,14 @@ export function BlogButton() {
 
   return (
     <div onClick={handleClick}>
-      <TextShimmerButton duration={1.2} title={"All Blogs"} icon={true}>
-        <span className=" group-hover:animate-bounce">
-          <FaLocationArrow />
+      <TextShimmerButton
+        duration={1.2}
+        title={"All Blogs"}
+        icon={true}
+        width={"hover:gap-4"}
+      >
+        <span className=" ">
+          <RiExternalLinkLine />
         </span>
       </TextShimmerButton>
     </div>

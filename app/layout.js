@@ -36,7 +36,6 @@ export default function RootLayout({ children }) {
               // "reddit",
             ]}
           >
-            {/* <Navbar /> */}
             <StickyNav />
 
             <Spotlight

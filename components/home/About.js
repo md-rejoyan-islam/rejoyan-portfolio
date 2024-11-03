@@ -83,7 +83,7 @@ export default function About() {
                 duration: 1,
               }}
             >
-              <figure className="relative px-16 py-6" id="imgFigur">
+              <figure className="relative p-4 md:px-16 md:py-6" id="imgFigur">
                 <NeonGradientCard borderSize={1} borderRadius={15}>
                   <Image
                     src={photo}

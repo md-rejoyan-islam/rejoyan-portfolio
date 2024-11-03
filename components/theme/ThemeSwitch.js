@@ -52,7 +52,7 @@ export default function ThemeSwitch() {
   return (
     <div ref={ref} className="relative inline-block text-left">
       <button
-        className="bg-background-secondary border h-10 w-10  hover:gap-4 transition-all rounded-lg   justify-center flex gap-2 items-center hover:bg-black/5 "
+        className="bg-background-secondary border h-10 w-10  hover:gap-4 transition-all rounded-lg   justify-center flex gap-2 items-center hover:bg-[#593cea23] "
         onClick={toggleDropdown}
       >
         {toggleMenus.map((themeItem) => {
