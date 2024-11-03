@@ -171,7 +171,7 @@ export default function Banner() {
                 onClick={() => {
                   const link = document.createElement("a");
                   link.href = "/RESUME.pdf";
-                  link.download = "resume.pdf";
+                  link.download = "rejoyan_resume.pdf";
                   link.click();
                 }}
               >
