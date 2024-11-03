@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Spotlight } from "@/components/ui/spotlight";
 import { geistMono, geistSans, incognito } from "./fonts/font";
 import "./globals.css";
+import LoadingWrapper from "./LoadingWrapper";
 
 export const metadata = {
   title: "Rejoyan Islam",
@@ -19,34 +20,36 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${incognito.variable} relative scroll-smooth antialiased text-primary bg-background-secondary overflow-x-hidden`}
         suppressHydrationWarning={true}
       >
-        <ThemeProvider
-          enableSystem
-          attribute="class"
-          defaultTheme="light"
-          themes={[
-            "light",
-            "dark",
-            // "instagram",
-            // "facebook",
-            // "discord",
-            // "netflix",
-            // "twilight",
-            // "reddit",
-          ]}
-        >
-          {/* <Navbar /> */}
-          <StickyNav />
+        <LoadingWrapper>
+          <ThemeProvider
+            enableSystem
+            attribute="class"
+            defaultTheme="light"
+            themes={[
+              "light",
+              "dark",
+              // "instagram",
+              // "facebook",
+              // "discord",
+              // "netflix",
+              // "twilight",
+              // "reddit",
+            ]}
+          >
+            {/* <Navbar /> */}
+            <StickyNav />
 
-          <Spotlight
-            className="top-40 left-0 md:left-96 md:top-0 z-50  "
-            fill="rgba(16, 163, 233, .7)"
-          />
+            <Spotlight
+              className="top-40 left-0 md:left-96 md:top-0 z-50  "
+              fill="rgba(16, 163, 233, .7)"
+            />
 
-          <main className="mx-auto max-container  px-4">{children}</main>
-          <Socials direction="col" position="fixed" />
-          <ScrollToTopButton />
-          <Footer />
-        </ThemeProvider>
+            <main className="mx-auto max-container  px-4">{children}</main>
+            <Socials direction="col" position="fixed" />
+            <ScrollToTopButton />
+            <Footer />
+          </ThemeProvider>
+        </LoadingWrapper>
       </body>
     </html>
   );
