@@ -145,7 +145,7 @@ export default function Navbar() {
 
           <Sheet onOpenChange={setOpenModal} open={openModal}>
             <SheetTrigger className="md:hidden">
-              <RiMenu3Line className="text-3xl border-zinc-700 rounded-md border p-[5px] bg-[#24223f47]" />
+              <RiMenu3Line className="text-3xl border-[#9498fa89] rounded-md border p-[5px] hover:bg-[#593cea24] bg-[#593cea0f] dark:bg-[#24223f47]" />
             </SheetTrigger>
             <SheetContent
               className="z-[1000] border-project-card-bg-secondary text-secondary dark:text-text-secondary md:hidden sm:max-w-[325px]  max-w-[50vw] min-w-[250px] bg-[#11082582]  backdrop-blur-[3px] "
