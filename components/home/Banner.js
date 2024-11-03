@@ -93,7 +93,7 @@ export default function Banner() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r  to-[#1cc8ff]   from-[#583cea] ">
+            <span className="bg-clip-text  text-transparent bg-gradient-to-r  to-[#1cc8ff]   from-[#583cea] ">
               Md. Rejoyan Islam
             </span>{" "}
             <br />
@@ -109,7 +109,7 @@ export default function Banner() {
             <FlipWords
               words={words}
               className={
-                "bg-clip-text inline-block overflow-hidden text-wrap text-[2em] sm:text-[3em] text-text-primary"
+                "bg-clip-text inline-block overflow-hidden text-wrap text-[2em] sm:text-[3em] text-text-secondary font-medium"
               }
             />
           </motion.div>
