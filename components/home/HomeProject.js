@@ -34,7 +34,7 @@ export default function HomeProject({ direction, project }) {
             {project?.name}
           </h3>
 
-          <p className=" rounded-md text-text-secondary backdrop-blur-sm dark:backdrop-blur-lg  lg:text-text-primary py-2 lg:px-4 h-full lg:bg-project-card-bg-secondar  bg-[#593cea0a] border-[#eaebed] dark:border-none dark:bg-[#2d467639] shadow-sm border  ">
+          <p className=" rounded-md text-text-secondary backdrop-blur-sm dark:backdrop-blur-lg  lg:text-text-primary py-2 lg:px-4 h-full lg:bg-project-card-bg-secondar  md:bg-[#593cea0a] border-[#eaebed] dark:border-none dark:bg-[#2d467639] md:shadow-sm md:border  ">
             {project?.description}
           </p>
 
