@@ -4,6 +4,7 @@ import { FaUserNinja } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 
 import { motion, stagger, useAnimate } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { FlipWords } from "../ui/flip-words";
 import { IconCloud } from "../ui/IconCloud";
@@ -22,6 +23,7 @@ export default function Banner() {
 
   const [scope, animate] = useAnimate();
   const staggerList = stagger(0.1, { startDelay: 5.5 });
+
   const slugs = [
     "typescript",
     "javascript",
@@ -55,6 +57,7 @@ export default function Banner() {
     "figma",
   ];
   const bannerRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     animate(
@@ -146,27 +149,42 @@ export default function Banner() {
             ref={scope}
           >
             <motion.li style={{ opacity: 0, scale: 0.3, x: -50 }}>
-              <TextShimmerButton
-                duration={1.2}
-                title={"Contact me"}
-                icon={true}
-                width={"w-[160px] hover:gap-4"}
+              <div
+                onClick={() => {
+                  router.push("/contact");
+                }}
               >
-                <span className="group-hover:animate-pulse">
-                  <FaUserNinja />
-                </span>
-              </TextShimmerButton>
+                <TextShimmerButton
+                  duration={1.2}
+                  title={"Contact me"}
+                  icon={true}
+                  width={"w-[160px] hover:gap-4"}
+                >
+                  <span className="group-hover:animate-pulse">
+                    <FaUserNinja />
+                  </span>
+                </TextShimmerButton>
+              </div>
             </motion.li>
             <motion.li style={{ opacity: 0, scale: 0.3, x: -50 }}>
-              <TextShimmerButton
-                duration={1.2}
-                title={"Get Resume"}
-                icon={true}
+              <div
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/RESUME.pdf";
+                  link.download = "resume.pdf";
+                  link.click();
+                }}
               >
-                <span className=" group-hover:animate-bounce">
-                  <MdFileDownload />
-                </span>
-              </TextShimmerButton>
+                <TextShimmerButton
+                  duration={1.2}
+                  title={"Get Resume"}
+                  icon={true}
+                >
+                  <span className=" group-hover:animate-bounce">
+                    <MdFileDownload />
+                  </span>
+                </TextShimmerButton>
+              </div>
             </motion.li>
           </ul>
         </div>
