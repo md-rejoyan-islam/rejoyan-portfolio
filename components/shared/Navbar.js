@@ -23,16 +23,16 @@ export default function Navbar() {
       href: "/",
     },
     {
+      name: "About",
+      href: "/about",
+    },
+    {
       name: "Projects",
       href: "/projects",
     },
     {
       name: "Blogs",
       href: "/blogs",
-    },
-    {
-      name: "Experience",
-      href: "/experience",
     },
     {
       name: "Contact",
