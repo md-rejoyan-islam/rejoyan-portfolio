@@ -90,7 +90,7 @@ export default function Banner() {
           >
             Hi, I&apos;m{" "}
           </motion.h2>
-          <motion.h2
+          <motion.h1
             className="  text-[35px] sm:text-[45px] md:text-[55px] lg:text-[60px] font-semibold "
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -100,7 +100,7 @@ export default function Banner() {
               Md. Rejoyan Islam
             </span>{" "}
             <br />
-          </motion.h2>
+          </motion.h1>
 
           {/* type data  */}
           <motion.div

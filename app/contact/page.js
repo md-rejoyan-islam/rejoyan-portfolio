@@ -5,7 +5,10 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 export default function Contact() {
   return (
-    <div>
+    <div className="pt-10 pb-12 px-3 sm:px-4 relative">
+      <h1 className="text-2xl text-center ">
+        Contact <span className="text-primary">Me</span>
+      </h1>
       <div className="py-4 col-span-2 h-fit ">
         <h3 className="py-2 text-xl text-text-primary font-semibold">
           What is your plan ? Call me
