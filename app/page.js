@@ -5,32 +5,27 @@ import Contact from "@/components/home/Contact";
 import Education from "@/components/home/Education";
 import Projects from "@/components/home/Projects";
 import Services from "@/components/home/Services";
+import WorkingProcesses from "@/components/home/services/working-processes";
 import Skills from "@/components/home/Skills";
-import { WorkingProcess } from "@/components/home/WorkingProcess";
 
 export default function Home() {
   return (
     <div className="px-2 sm:px-4">
       <Banner />
-
       {/* about  part */}
       <About />
-
       {/* skill */}
       <Skills />
-
       {/* working process  */}
-      <WorkingProcess />
-
+      <WorkingProcesses />
+      {/* working process
+      <WorkingProcess /> */}
       {/* services */}
       <Services />
-
       {/* projects  */}
       <Projects />
-
       {/* education  */}
       <Education />
-
       {/* blog */}
       <Blogs />
       {/* contact */}

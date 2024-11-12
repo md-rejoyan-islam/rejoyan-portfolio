@@ -12,12 +12,16 @@ export default function LoadingWrapper({ children }) {
 
   // Handle initial load
   useEffect(() => {
-    setInitialLoading(false); // Hides loading after the initial page load is complete
+    // wait for 1 second
+    const timer = setTimeout(() => {
+      setInitialLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {(initialLoading || isPending) && (
+      {!initialLoading || isPending ? (
         <div className="fixed top-0 left-0 z-50 w-full h-full  flex items-center justify-center bg-background-secondary">
           {/* <ShowLottieFile src={lootieAnimation} loop={true} className={""} /> */}
           <Image
@@ -28,9 +32,9 @@ export default function LoadingWrapper({ children }) {
             className="w-96 h-96"
           />
         </div>
-      )}{" "}
-      {/* Your loading component */}
-      {children}
+      ) : (
+        children
+      )}
     </>
   );
 }
