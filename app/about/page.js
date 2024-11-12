@@ -28,27 +28,27 @@ export default function Experience() {
     {
       id: 1,
       title: "Reading Books",
-      icon: <FcReading className="text-3xl" />,
+      icon: <FcReading className="text-6xl" />,
     },
     {
       id: 2,
       title: "Cycling",
-      icon: <IoMdBicycle className="text-3xl" />,
+      icon: <IoMdBicycle className="text-6xl" />,
     },
     {
       id: 3,
       title: "Travelling",
-      icon: <IoAirplane className="text-3xl" />,
+      icon: <IoAirplane className="text-6xl" />,
     },
     {
       id: 4,
       title: "Gardening",
-      icon: <IoLeaf className="text-3xl" />,
+      icon: <IoLeaf className="text-6xl" />,
     },
     {
       id: 4,
       title: "Watching Movies",
-      icon: <BiSolidMoviePlay className="text-3xl" />,
+      icon: <BiSolidMoviePlay className="text-6xl" />,
     },
   ];
 
@@ -63,7 +63,7 @@ export default function Experience() {
           {qualifications.map((qualification) => (
             <div
               key={qualification.id}
-              className="p-6 border rounded-md  flex justify-between gap-6  items-center"
+              className="p-6 border rounded-lg bg-[#d7dfdd13]  hover:scale-105 transition-all duration-150  flex justify-between gap-6  items-center border-[#eee] dark:border-[#7ac9b71c]"
             >
               <span>
                 <svg
@@ -84,7 +84,7 @@ export default function Experience() {
                   {qualification.title}
                 </h2>
 
-                <p className="text-text-secondary text-2xl font-medium">
+                <p className="text-text-secondary text-[22px] py-2 font-medium">
                   {qualification.institution}
                 </p>
                 <p className="text-text-secondary text-xl font-medium">
@@ -96,7 +96,7 @@ export default function Experience() {
         </div>
       </div>
       {/* Hobbies */}
-      <div className="mt-10">
+      <div className="py-20">
         <h1 className="text-center  text-text-root font-incognito font-semibold tracking-tight sm:text-4xl text-2xl mb-5 sm:mb-6 lg:leading-[3.7rem]">
           <LetterPullup words={"Hobbies"} delay={0.1} />
         </h1>
@@ -104,11 +104,11 @@ export default function Experience() {
           {hobbies.map((hobby) => (
             <div
               key={hobby.id}
-              className="p-6 border rounded-md  flex justify-between gap-6  items-center"
+              className="p-6  border border-[#eee] dark:border-[#7ac9b71c] shadow-sm rounded-md  flex justify-between gap-6  items-center  backdrop-blur-3xl bg-[#d7dfdd13] hover:scale-105 transition-transform duration-150"
             >
-              <span>{hobby.icon}</span>
+              <span className="text-[#573de9]">{hobby.icon}</span>
               <div className="flex-1 space-y-1">
-                <h2 className="text-text-primary text-3xl font-semibold ">
+                <h2 className="text-text-primary text-2xl font-semibold ">
                   {hobby.title}
                 </h2>
               </div>

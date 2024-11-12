@@ -119,9 +119,13 @@ export default function WorkingProcesses() {
               <div
                 key={index}
                 onClick={() => handleTabClick(index)}
-                className="w-full text-left focus:outline-none group relative border py-3.5 px-2 rounded-md items-center flex h-full bg-transparent dark:bg-[#2e5b5b0d] cursor-pointer backdrop-blur-2xl dark:border-[#1c3f6335] hover:scale-[1.02] transition-all duration-200 ease-in-out"
+                className={cn(
+                  "w-full text-left focus:outline-none group relative border py-3.5 px-2 rounded-md items-center flex h-full bg-transparent dark:bg-[#2e5b5b0d] cursor-pointer backdrop-blur-2xl dark:border-[#1c3f6335] hover:scale-[1.02] transition-all duration-200 ease-in-out",
+                  step === index &&
+                    "scale-[1.02] bg-[#593cea0c]  dark:bg-black/5"
+                )}
               >
-                <div className="flex items-center gap-4 relative pl-2 text-lg">
+                <div className="flex items-center gap-4 relative pl-2 text-lg font-semibold">
                   <span
                     className={cn(
                       "text-sm font-medium transition-colors",

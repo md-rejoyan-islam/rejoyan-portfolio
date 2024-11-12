@@ -10,8 +10,6 @@ export default function LoadingWrapper({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);
   const [isPending, startTransition] = useTransition();
 
-  console.log(initialLoading);
-
   // Handle initial load
   useEffect(() => {
     // wait for 1 second

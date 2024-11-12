@@ -52,7 +52,7 @@ export function StepContent({ step, direction, processes }) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 text-center max-w-2xl mx-auto"
+          className="text-gray-600 text-center max-w-2xl mx-auto text-lg"
         >
           {content.sort_description}
         </motion.p>
