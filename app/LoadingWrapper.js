@@ -10,6 +10,8 @@ export default function LoadingWrapper({ children }) {
   const [initialLoading, setInitialLoading] = useState(true);
   const [isPending, startTransition] = useTransition();
 
+  console.log(initialLoading);
+
   // Handle initial load
   useEffect(() => {
     // wait for 1 second
@@ -21,7 +23,7 @@ export default function LoadingWrapper({ children }) {
 
   return (
     <>
-      {!initialLoading || isPending ? (
+      {initialLoading || isPending ? (
         <div className="fixed top-0 left-0 z-50 w-full h-full  flex items-center justify-center bg-background-secondary">
           {/* <ShowLottieFile src={lootieAnimation} loop={true} className={""} /> */}
           <Image

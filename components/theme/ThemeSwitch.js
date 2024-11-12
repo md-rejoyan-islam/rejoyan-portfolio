@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
         // onClick={hashAdded}
       >
         {/* <span>Theme</span> */}
-        <FiSun />
+        <FiSun key={1} />
       </button>
     );
 
@@ -33,19 +33,19 @@ export default function ThemeSwitch() {
       id: 1,
       name: "Light",
       key: "light",
-      icon: <FiSun />,
+      icon: <FiSun key={1} />,
     },
     {
       id: 2,
       name: "Dark",
       key: "dark",
-      icon: <LuMoonStar />,
+      icon: <LuMoonStar key={2} />,
     },
     {
       id: 3,
       name: "System",
       key: "system",
-      icon: <MdOutlineImportantDevices />,
+      icon: <MdOutlineImportantDevices key={3} />,
     },
   ];
 
